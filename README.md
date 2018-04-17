@@ -1,8 +1,8 @@
 # clan.nom_nom_nom by 4/5ths Hatted
-Group project to design an application which will act as a family and friend cookbook to an individual or group to compile, share and compare cooking recipes with each other in a brand new way.  If you sign up you can link yourself up to your friends and family using our soon to be built connection means.  After that point you will all be able to share information with each others so that you can take Great Grandma Nan's Hotdish and share it with everyone in the family for those cold days..
+Group project to design an application which will act as a family and friend cookbook to an individual or group to compile, share and compare cooking recipes with each other in a brand new way.  If you sign up you can link yourself up to your friends and family using our soon to be built connection means.  After that point you will all be able to share information with each others so that you can take Great Grandma Nan's Hotdish and share it with everyone in the family for those cold days.
 
 ## Getting Started:
-To download a copy of the repo for your own use please access: TBD
+To download a copy of the repo for your own use please access: TBD  
 ## Prerequisites: 
 You're going to need the following bits of software to operate this.
 
