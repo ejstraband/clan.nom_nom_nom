@@ -1,12 +1,13 @@
 {
-  "name": "clannom",
-  "version": "0.1.0",
-  "private": true,
-  "main": "index.js",
+  "name": "AncestryDotNom",
+  "version": "1.0.0",
+  "description": "A social media website where extended families can share family recipes.",
+  "main": "server.js",
+  "repository": "https://github.com/ruffcorn33/AncestryDotNom.git",
+  "author": "Craig Christensen <ruffcorn@gmail.com>",
+  "license": "MIT",
   "scripts": {
-    "start": "node --use_strict index.js",
-    "dev": "nodemon --use_strict index.js",
-    "bundle": "webpack"
+    "start": "node server/server.js"
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -20,21 +21,9 @@
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "prop-types": "^15.6.1",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
-    "react-router": "^4.2.0",
-    "react-router-dom": "^4.2.2",
-    "react-scripts": "1.1.4",
-    "react-tap-event-plugin": "^3.0.2",
     "validator": "^9.4.1"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.4",
-    "babel-plugin-transform-es2015-destructuring": "^6.23.0",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
-    "nodemon": "^1.17.3",
-    "webpack": "^4.6.0"
-  }}
+    "eslint": "^4.19.1"
+  }
+}

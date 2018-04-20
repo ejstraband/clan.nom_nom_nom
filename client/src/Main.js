@@ -12,12 +12,12 @@ import {
   withRouter
 } from 'react-router-dom'
 
-import Base from './components/Base.jsx';
-import HomePage from './components/HomePage.jsx';
-import LoginPage from './containers/LoginPage.jsx';
-import LogoutFunction from './containers/LogoutFunction.jsx';
-import SignUpPage from './containers/SignUpPage.jsx';
-import DashboardPage from './containers/DashboardPage.jsx';
+import Base from './components/Base.js';
+import HomePage from './components/HomePage.js';
+import LoginPage from './containers/LoginPage.js';
+import LogoutFunction from './containers/LogoutFunction.js';
+import SignUpPage from './containers/SignUpPage.js';
+import LandingPage from './containers/LandingPage.js';
 import Auth from './modules/Auth';
 
 // remove tap delay, essential for MaterialUI to work properly
@@ -84,7 +84,7 @@ class Main extends Component {
               </div>
               {this.state.authenticated ? (
                 <div className="top-bar-right">
-                  <Link to="/dashboard">Dashboard</Link>
+                  <Link to="/landingPage">Landing Page</Link>
                   <Link to="/logout">Log out</Link>
                 </div>
               ) : (
@@ -97,7 +97,7 @@ class Main extends Component {
             </div>
 
             <PropsRoute exact path="/" component={HomePage} toggleAuthenticateStatus={() => this.toggleAuthenticateStatus()} />
-            <PrivateRoute path="/dashboard" component={DashboardPage}/>
+            <PrivateRoute path="/landingPage" component={LandingPage}/>
             <LoggedOutRoute path="/login" component={LoginPage} toggleAuthenticateStatus={() => this.toggleAuthenticateStatus()} />
             <LoggedOutRoute path="/signup" component={SignUpPage}/>
             <Route path="/logout" component={LogoutFunction}/>
