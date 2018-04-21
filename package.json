@@ -1,29 +1,27 @@
 {
-  "name": "AncestryDotNom",
+  "name": "clan.nom_nom_nom",
   "version": "1.0.0",
-  "description": "A social media website where extended families can share family recipes.",
+  "description": "",
   "main": "server.js",
-  "repository": "https://github.com/ruffcorn33/AncestryDotNom.git",
-  "author": "Craig Christensen <ruffcorn@gmail.com>",
-  "license": "MIT",
   "scripts": {
-    "start": "node server/server.js"
+    "server": "node server.js",
+    "client": "node scripts/start-client.js",
+    "start": "concurrently \"nodemon server.js\" \"npm run client\"",
+    "build": "node scripts/build.js",
+    "seed": "node scripts/seedDB.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "installDeps": "yarn && cd client && yarn"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^3.5.0",
+    "nodemon": "^1.11.0"
   },
   "dependencies": {
-    "axios": "^0.18.0",
-    "bcryptjs": "^2.4.3",
-    "body-parser": "^1.18.2",
-    "express": "^4.16.3",
-    "jsonwebtoken": "^8.2.1",
-    "material-ui": "^0.20.0",
-    "mongoose": "^5.0.15",
-    "morgan": "^1.9.0",
-    "passport": "^0.4.0",
-    "passport-local": "^1.0.0",
-    "prop-types": "^15.6.1",
-    "validator": "^9.4.1"
-  },
-  "devDependencies": {
-    "eslint": "^4.19.1"
+    "axios": "^0.16.2",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "mongoose": "^5.0.11"
   }
 }
