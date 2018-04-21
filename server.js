@@ -12,14 +12,14 @@ app.use(logger('dev'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static('client/build'));
-app.use(routes);
+// app.use(routes);
 
 // MongoDB configuration
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/clannomnom');
 
-const db = mongoose.connection();
+const db = mongoose.connection;
 db.on('error', error => console.log('Database Error: ', error));
-db.on('open', () => console.log('~~~ MongoDB connection successful ~~~'));
+db.once('open', () => console.log('~~~ MongoDB connection successful ~~~'));
 
 // Listener
 app.listen(PORT, () => console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`));
