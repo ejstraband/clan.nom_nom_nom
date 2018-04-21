@@ -1,21 +1,29 @@
 {
-  "name": "clannom",
-  "version": "0.1.0",
-  "private": true,
+  "name": "AncestryDotNom",
+  "version": "1.0.0",
+  "description": "A social media website where extended families can share family recipes.",
+  "main": "server.js",
+  "repository": "https://github.com/ruffcorn33/AncestryDotNom.git",
+  "author": "Craig Christensen <ruffcorn@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node server/server.js"
+  },
   "dependencies": {
     "axios": "^0.18.0",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.2",
     "express": "^4.16.3",
+    "jsonwebtoken": "^8.2.1",
+    "material-ui": "^0.20.0",
     "mongoose": "^5.0.15",
     "morgan": "^1.9.0",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
-    "react-scripts": "1.1.4"
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "prop-types": "^15.6.1",
+    "validator": "^9.4.1"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+  "devDependencies": {
+    "eslint": "^4.19.1"
   }
 }
