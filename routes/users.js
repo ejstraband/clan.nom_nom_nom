@@ -3,7 +3,7 @@ const router = express.Router();
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 
-const User = require('../models/user');
+const User = require('../models/user_model');
 
 //Register
 router.get('/register', function(req, res){
