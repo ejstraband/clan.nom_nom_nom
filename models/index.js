@@ -1,7 +1,7 @@
-import Recipe from './recipe';
-import User from './user';
+const recipeModel = require ('./recipe');
+const userModel = require ('./user');
 
-export {
-  Recipe,
-  User
-}; 
+module.exports = {
+  recipeModel,
+  userModel
+};
