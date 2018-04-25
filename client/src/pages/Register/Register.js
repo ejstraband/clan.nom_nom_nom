@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import { Input, FormBtn } from "../../components/Form";
+
 console.log('api is ,', API)
 class SignUp extends Component {
 	state = {

@@ -16,6 +16,7 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   create: (req, res) => {
+    console.log("inside user controller create method");
     db.User
       .create(req.body)
       .then(dbModel => res.json(dbModel))

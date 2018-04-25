@@ -64,9 +64,11 @@ app.use(function (req, res, next) {
 
 // routes
 const routes = require("./routes");
+const users = require("./routes/api/users")
+
 app.use(routes);
 // app.use('/', routes);
-// app.use('/api/users', users);
+app.use('/api/users', users);
 
 // MongoDB configuration
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/clannomnom');
