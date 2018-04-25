@@ -1,7 +1,7 @@
 const db = require("../models");
 
 // Defining methods for the UserController
-const userController = {
+module.exports = {
   findAll: (req, res) => {
     db.User
       .find(req.query)
@@ -36,4 +36,4 @@ const userController = {
   }
 };
 
-module.exports = userController;
+// module.exports = userController;
