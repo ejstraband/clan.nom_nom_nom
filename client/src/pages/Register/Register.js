@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import { Input, FormBtn } from "../../components/Form";
-
+console.log('api is ,', API)
 class SignUp extends Component {
 	state = {
 		user: [],
 		email: "",
-		// username: "",
 		name: "",
 		password: "",
 		password2: "",
@@ -24,16 +23,16 @@ class SignUp extends Component {
   };
 
   handleFormSubmit = event => {
-    event.preventDefault();
-    if (this.state.email && this.state.username && this.state.name && (this.state.password === this.state.password2)) {
+		event.preventDefault();
+		console.log(event);
+    if (this.state.email && this.state.name && (this.state.password === this.state.password2)) {
       API.saveUser({
         email: this.state.email,
-        username: this.state.username,
 				name: this.state.name,
         password: this.state.password,
       })
-        .then(console.log('User Saved'))
-        .catch(err => console.log(err));
+        .then(res => console.log(res))
+        .catch(err => console.log("User save error: " + err));
     }
   };
 
@@ -48,12 +47,6 @@ class SignUp extends Component {
 						name="email"
 						placeholder="Email (required)"
 					/>
-					{/* <Input
-						value={this.state.username}
-						onChange={this.handleInputChange}
-						name="username"
-						placeholder="Username (required)"
-					/> */}
 					<Input
 						value={this.state.name}
 						onChange={this.handleInputChange}

@@ -1,8 +1,8 @@
 const router = require("express").Router();
-const userRoutes = require("./user_routes");
-const recipeRoutes = require("./recipe_routes");
+const userRoutes = require("./users");
+const recipeRoutes = require("./recipes");
 
-router.use("/users", userRoutes);
+router.use("/api/users", userRoutes);
 router.use("/recipes", recipeRoutes);
 
 // Get Homepage

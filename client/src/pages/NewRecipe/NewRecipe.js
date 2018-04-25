@@ -5,7 +5,7 @@ import { Input, FormBtn } from "../../components/Form";
 class NewRecipe extends Component {
 	state = {
     recipe: [],
-    name: "",
+    title: "",
     rating: 0,
     prep_time: "",
     cook_time: "",
@@ -36,7 +36,7 @@ class NewRecipe extends Component {
     event.preventDefault();
     if (this.state.name && this.state.categories && this.state.ingredients && this.state.directions && this.state.notes) {
       API.saveRecipe({
-        name: this.state.name,
+        title: this.state.title,
         rating: 0,
         prep_time: this.state.prep_time,
         cook_time: this.state.cook_time,
@@ -62,9 +62,9 @@ class NewRecipe extends Component {
 				<h1>Create a Recipe</h1>
 				<form>
 					<Input
-						value={this.state.name}
+						value={this.state.title}
 						onChange={this.handleInputChange}
-						name="name"
+						name="title"
 						placeholder="Name of recipe"
 					/>
 					<Input
@@ -134,7 +134,7 @@ class NewRecipe extends Component {
 						placeholder="Say something about this recipe"
 					/>
 					<FormBtn
-						disabled={!(this.state.name && this.state.categories && this.state.ingredients && this.state.directions && this.state.notes)}
+						disabled={!(this.state.title && this.state.categories && this.state.ingredients && this.state.directions && this.state.notes)}
 						onClick={this.handleFormSubmit}
 					>
 						Submit

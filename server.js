@@ -63,10 +63,10 @@ app.use(function (req, res, next) {
 });
 
 // routes
-const routes = require('./routes/index.js');
-const users = require('./routes/api/user_routes');
-app.use('/', routes);
-app.use('/users', users);
+const routes = require("./routes");
+app.use(routes);
+// app.use('/', routes);
+// app.use('/api/users', users);
 
 // MongoDB configuration
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/clannomnom');
