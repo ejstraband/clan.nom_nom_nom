@@ -6,7 +6,7 @@ const routes = require("./routes");
 const logger = require('morgan');
 const cors = require('cors');
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 
 app.use(cors())
 
@@ -25,7 +25,7 @@ mongoose.Promise = global.Promise;
 
 // MongoDB configuration
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/ancestrydotnom",
+  process.env.MONGODB_URI || "mongodb://localhost/ancestrydotnom"
 );
 
 const db = mongoose.connection;
