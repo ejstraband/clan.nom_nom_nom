@@ -1,24 +1,30 @@
-import React, { Component } from "react";
-import Nav from "./components/Nav/Nav";
-import Home from "./pages/Home/Home";
-import Login from "./pages/Login/Login";
-import SignUp from "./pages/Register/Register";
-import NewRecipe from "./pages/NewRecipe/NewRecipe";
-import { Route} from 'react-router-dom'
+import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Recipes from "./pages/Recipes";
+import About from "./pages/About";
+import Search from "./pages/Search";
+import Login from "./pages/Login";
+import SignUp from "./pages/Register";
+// import NewRecipe from "./pages/NewRecipe";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Wrapper from "./components/Wrapper";
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <Nav />
-        <Route path="/signup" render={() => <SignUp />} />
-        <Route path="/login" render={() => <Login />} />
-        <Route path="/newrecipe" render={() => <NewRecipe />} />
-        <Route path="/" exact render={() => <Home />} />
-        <Nav />
-      </div>
-    );
-  }
-}
+const App = () => (
+  <Router>
+    <div>
+      <Navbar />
+      <Wrapper>
+        <Route exact path="/" component={About} />
+        <Route exact path="/about" component={About} />
+        <Route exact path="/recipes" component={Recipes} />
+        <Route exact path="/search" component={Search} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/signup" component={SignUp} />
+      </Wrapper>
+      <Footer />
+    </div>
+  </Router>
+);
 
 export default App;

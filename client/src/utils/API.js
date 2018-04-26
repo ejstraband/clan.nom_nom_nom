@@ -1,7 +1,7 @@
 import axios from "axios";
 
-axios.defaults.baseURL = process.env.REACT_APP_API_URL
 export default {
+  // USERS
   // Gets all users
   getUsers: function() {
     return axios.get("/api/users");
@@ -19,6 +19,7 @@ export default {
     console.log('user data is: ', userData)
     return axios.post("/api/users", userData);
   },
+  // RECIPES
   // Gets all recipes
   getRecipes: function() {
     return axios.get("/api/recipes");
