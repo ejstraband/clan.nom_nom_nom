@@ -10,7 +10,7 @@
     "build": "node scripts/build.js",
     "installDeps": "yarn && cd client && yarn"
   },
-  "author": "Craig Christensen",
+  "author": "Team 4/5 Hatted",
   "license": "MIT",
   "devDependencies": {
     "concurrently": "^3.5.0",
