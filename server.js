@@ -25,7 +25,7 @@ mongoose.Promise = global.Promise;
 
 // MongoDB configuration
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/ancestrydotnom"
+  process.env.MONGODB_URI || "mongodb://localhost/clannomnom"
 );
 
 const db = mongoose.connection;
