@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import API from "../../utils/API";
 import { Input, FormBtn } from "../../components/Form";
 
+import image from '../../images/pic.jpg'
+
 class NewRecipe extends Component {
 	state = {
     recipe: [],
@@ -33,8 +35,9 @@ class NewRecipe extends Component {
   };
 
   handleFormSubmit = event => {
-    event.preventDefault();
-    if (this.state.name && this.state.categories && this.state.ingredients && this.state.directions && this.state.notes) {
+		event.preventDefault();
+		console.log(this.state)
+    if (this.state.title && this.state.categories && this.state.ingredients && this.state.directions && this.state.notes) {
       API.saveRecipe({
         title: this.state.title,
         rating: 0,
@@ -58,8 +61,9 @@ class NewRecipe extends Component {
 
 	render(){
 		return (
-			<div className='container col-6'>
+			<div className='container col-10 col-md-6'>
 				<h1>Create a Recipe</h1>
+				<img src={image} width={100} height={100}/>
 				<form>
 					<Input
 						value={this.state.title}

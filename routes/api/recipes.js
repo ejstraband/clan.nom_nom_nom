@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const recipeController = require('../../controllers/recipe_controller');
+const recipeController = require('../../controllers/recipeController');
 
 // "/api/recipes"
 router.route('/')

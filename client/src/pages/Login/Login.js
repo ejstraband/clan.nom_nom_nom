@@ -2,6 +2,7 @@ import React, { Component } from "react";
 // import API from "../../utils/API";
 import { Input, FormBtn } from "../../components/Form";
 
+import './index.css'
 class Login extends Component {
 	state = {
 		user: [],
@@ -29,7 +30,7 @@ class Login extends Component {
 	
 	render(){
 		return(
-			<div className='container col-5'>
+			<div className='Login container col-5'>
 				<h1>Log in</h1>
 				<form>
 					<Input

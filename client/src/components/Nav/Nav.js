@@ -1,51 +1,52 @@
 import React from "react";
+import {Link} from 'react-router-dom'
 
 const Nav = props => (
   <nav className="navbar navbar-expand-lg navbar-light bg-light">
     <a className="navbar-brand" href="/">Clan.nom</a>
     <ul className="navbar-nav mr-auto">
       <li className="nav-item">
-        <a
-          onClick={() => props.handlePageChange("Home")}
+        <Link
+          to="/"
           className={
             props.currentPage === "Home" ? "nav-link active" : "nav-link"
           }
         >
           Home
-        </a>
+        </Link>
       </li>
       <li className="nav-item">
-        <a
-          onClick={() => props.handlePageChange("NewRecipe")}
+        <Link
+          to="/newrecipe"
           className={
             props.currentPage === "NewRecipe" ? "nav-link active" : "nav-link"
           }
         >
           Add Recipe
-        </a>
+        </Link>
       </li>
     </ul>
 
     <ul className="navbar-nav ml-auto list-inline">  
       <li className="nav-item list-inline-item">
-        <a
-          onClick={() => props.handlePageChange("Login")}
+        <Link
+          to="/login"
           className={
             props.currentPage === "Login" ? "nav-link active" : "nav-link"
           }
         >
           Login
-        </a>
+        </Link>
       </li>
       <li className="nav-item list-inline-item">
-        <a
-          onClick={() => props.handlePageChange("SignUp")}
+        <Link
+          to="/signup"
           className={
             props.currentPage === "SignUp" ? "nav-link active" : "nav-link"
           }
         >
           Register
-        </a>
+        </Link>
       </li>
     </ul>
   </nav>

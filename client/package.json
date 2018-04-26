@@ -9,9 +9,12 @@
     "react-scripts": "1.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "cross-env REACT_APP_API_URL=http://localhost:3001 react-scripts start",
+    "build": "cross-env REACT_APP_API_URL=http://localhost:3001 react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "cross-env": "^5.1.4"
   }
 }

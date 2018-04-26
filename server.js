@@ -9,9 +9,12 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const mongoose = require('mongoose');
 const logger = require('morgan');
+const cors = require('cors')
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+
+app.use(cors())
 // Express configuration
 app.use(logger('dev'));
 app.use(bodyParser.urlencoded({ extended: true }));

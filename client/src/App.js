@@ -4,37 +4,18 @@ import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import SignUp from "./pages/Register/Register";
 import NewRecipe from "./pages/NewRecipe/NewRecipe";
+import { Route} from 'react-router-dom'
 
 class App extends Component {
-  state = {
-    currentPage: "Home"
-  }
-
-  handlePageChange = page => {
-    this.setState({ currentPage: page });
-  }
-
-  renderPage = () => {
-    if (this.state.currentPage === 'SignUp') {
-      return <SignUp />
-    } else if (this.state.currentPage === 'Login') {
-      return <Login />
-    }
-    else if (this.state.currentPage === 'NewRecipe') {
-      return <NewRecipe />
-    } else {
-      return <Home />
-    }
-  };
-
   render() {
     return (
       <div>
-        <Nav
-          currentPage={this.state.currentPage}
-          handlePageChange={this.handlePageChange}
-        />
-        {this.renderPage()}
+        <Nav />
+        <Route path="/signup" render={() => <SignUp />} />
+        <Route path="/login" render={() => <Login />} />
+        <Route path="/newrecipe" render={() => <NewRecipe />} />
+        <Route path="/" exact render={() => <Home />} />
+        <Nav />
       </div>
     );
   }
