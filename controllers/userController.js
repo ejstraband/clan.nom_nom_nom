@@ -2,38 +2,42 @@ const db = require("../models");
 
 // Defining methods for the UserController
 module.exports = {
-  findAll: (req, res) => {
+  findAll: function(req, res) {
     db.User
       .find(req.query)
       .sort({ date: -1 })
-      .then(dbModel => res.json(dbModel))
+      .then(dbUser => res.json(dbUser))
       .catch(err => res.status(422).json(err));
   },
-  findById: (req, res) => {
+  findById: function(req, res) {
     db.User
       .findById(req.params.id)
-      .then(dbModel => res.json(dbModel))
+      .then(dbUser => res.json(dbUser))
       .catch(err => res.status(422).json(err));
   },
-  create: (req, res) => {
-    db.User
-      .create(req.body)
-      .then(dbModel => res.json(dbModel))
+  create: function(req, res) {
+    const user = {
+      _id: req.body._id,
+      email: req.body.email,
+      name: req.body.name,
+      password: req.body.password,
+    };
+    db.user
+      .create(user)
+      .then(dbuser => res.json(dbuser))
       .catch(err => res.status(422).json(err));
   },
-  update: (req, res) => {
+  update: function(req, res) {
     db.User
       .findOneAndUpdate({ _id: req.params.id }, req.body)
-      .then(dbModel => res.json(dbModel))
+      .then(dbUser => res.json(dbUser))
       .catch(err => res.status(422).json(err));
   },
-  remove: (req, res) => {
+  remove: function(req, res) {
     db.User
       .findById({ _id: req.params.id })
-      .then(dbModel => dbModel.remove())
-      .then(dbModel => res.json(dbModel))
+      .then(dbUser => dbUser.remove())
+      .then(dbUser => res.json(dbUser))
       .catch(err => res.status(422).json(err));
   }
 };
-
-// module.exports = userController;
