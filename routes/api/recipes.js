@@ -1,15 +1,16 @@
 const router = require('express').Router();
-const recipeController = require('../../controllers/recipe_controller');
+const recipeController = require('../../controllers/recipeController');
 
-// Define routes
+// "/api/recipes"
 router.route('/')
   .get(recipeController.findAll)
   .post(recipeController.create);
-//
-router.route('/:id')
+
+// "api/recipes/:id"
+router
+  .route('/:id')
   .get(recipeController.findById)
   .put(recipeController.update)
   .delete(recipeController.remove);
-//
 
 module.exports = router;

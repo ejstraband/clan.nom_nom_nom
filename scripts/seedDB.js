@@ -6,9 +6,6 @@ mongoose.Promise = global.Promise;
 
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/clannomnom",
-  {
-    useMongoClient: true
-  }
 );
 
 const recipeSeed = [
@@ -58,10 +55,14 @@ db.Recipe
   .remove({})
   .then(() => db.Recipe.collection.insertMany(recipeSeed))
   .then(data => {
-    console.log(data.insertedIds.length + " records inserted!");
+
+    console.log(data.insertedIds.length,  " records inserted!");
+
     process.exit(0);
   })
   .catch(err => {
     console.error(err);
     process.exit(1);
+
   });
+
