@@ -20,7 +20,7 @@ class Login extends Component {
 			[name]: value
 			});
 	};
-	
+
 	handleFormSubmit = event => {
 		event.preventDefault();
 		if (this.state.email && this.state.password) {
