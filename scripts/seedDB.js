@@ -51,9 +51,9 @@ const recipeSeed = [
   },
 ];
 
-db.Recipe
+db.recipe
   .remove({})
-  .then(() => db.Recipe.collection.insertMany(recipeSeed))
+  .then(() => db.recipe.collection.insertMany(recipeSeed))
   .then(data => {
 
     console.log(data.insertedIds.length,  " records inserted!");

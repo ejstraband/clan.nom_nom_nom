@@ -1,8 +1,8 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\ruffc\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js install cors
+  C:\Program Files\nodejs\node.exe C:\Users\Jonathon Moore\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js run seed
 
 PATH: 
-  C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\ruffc\bin;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS;C:\Program Files\Microsoft MPI\Bin;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files\Microsoft SQL Server\130\Tools\Binn;C:\Program Files\dotnet;C:\Program Files\Git\cmd;C:\Program Files\nodejs;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\WiFi\bin;C:\Program Files\Common Files\Intel\WirelessCommon;C:\Program Files\MongoDB\Server\3.6\bin;C:\Program Files\Amazon\AWSCLI;C:\users\ruffc\appdata\roaming\python\python36\site-packages\virtualenv.py;C:\Users\ruffc\AppData\Local\Programs\Python\Python36\Scripts;C:\Users\ruffc\AppData\Local\Programs\Python\Python36;C:\Ruby24-x64\bin;C:\Users\ruffc\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Heroku\bin;C:\Users\ruffc\AppData\Local\atom\bin;C:\Users\ruffc\AppData\Local\GitHubDesktop\bin;C:\Users\ruffc\AppData\Roaming\npm;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\MySQL\MySQL Server 5.7\bin
+  C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Jonathon Moore\bin;C:\Program Files (x86)\Intel\iCLS Client;C:\Program Files\Intel\iCLS Client;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Program Files\nodejs;C:\Program Files\MySQL\MySQL Server 5.7\bin;C:\Program Files (x86)\Steam;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Jonathon Moore\AppData\Local\Programs\Python\Python36\Scripts;C:\Users\Jonathon Moore\AppData\Local\Programs\Python\Python36;C:\Users\Jonathon Moore\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Heroku\bin;C:\Users\Jonathon Moore\AppData\Local\GitHubDesktop\bin;C:\Users\Jonathon Moore\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Microsoft VS Code\bin;C:\Users\Jonathon Moore\AppData\Roaming\npm;C:\Program Files\MongoDB\Server\3.6\bin
 
 Yarn version: 
   1.5.1
@@ -24,9 +24,10 @@ npm manifest:
       "client": "node scripts/start-client.js",
       "start": "concurrently \"nodemon server.js\" \"npm run client\"",
       "build": "node scripts/build.js",
+      "seed": "node scripts/seedDB.js",
       "installDeps": "yarn && cd client && yarn"
     },
-    "author": "Craig Christensen",
+    "author": "Team 4/5 Hatted",
     "license": "MIT",
     "devDependencies": {
       "concurrently": "^3.5.0",
@@ -201,11 +202,11 @@ Lockfile:
     version "2.1.0"
     resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.0.tgz#ab2b150e51d7b122b9efc8d7340c06b6c41076bc"
   
-  axios@^0.16.2:
-    version "0.16.2"
-    resolved "https://registry.yarnpkg.com/axios/-/axios-0.16.2.tgz#ba4f92f17167dfbab40983785454b9ac149c3c6d"
+  axios@^0.17.1:
+    version "0.17.1"
+    resolved "https://registry.yarnpkg.com/axios/-/axios-0.17.1.tgz#2d8e3e5d0bdbd7327f91bc814f5c57660f81824d"
     dependencies:
-      follow-redirects "^1.2.3"
+      follow-redirects "^1.2.5"
       is-buffer "^1.1.5"
   
   babel-code-frame@^6.22.0:
@@ -246,7 +247,7 @@ Lockfile:
     version "3.5.0"
     resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.0.tgz#791420d7f551eea2897453a8a77653f96606d67c"
   
-  body-parser@1.18.2, body-parser@^1.17.2:
+  body-parser@1.18.2, body-parser@^1.18.2:
     version "1.18.2"
     resolved "https://registry.yarnpkg.com/body-parser/-/body-parser-1.18.2.tgz#87678a19d84b47d859b83199bd59bce222b10454"
     dependencies:
@@ -302,6 +303,10 @@ Lockfile:
   buffer-from@^1.0.0:
     version "1.0.0"
     resolved "https://registry.yarnpkg.com/buffer-from/-/buffer-from-1.0.0.tgz#4cb8832d23612589b0406e9e2956c17f06fdf531"
+  
+  buffer-shims@~1.0.0:
+    version "1.0.0"
+    resolved "https://registry.yarnpkg.com/buffer-shims/-/buffer-shims-1.0.0.tgz#9978ce317388c649ad8793028c3477ef044a8b51"
   
   bytes@3.0.0:
     version "3.0.0"
@@ -522,6 +527,13 @@ Lockfile:
     version "1.0.2"
     resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
   
+  cors@^2.8.4:
+    version "2.8.4"
+    resolved "https://registry.yarnpkg.com/cors/-/cors-2.8.4.tgz#2bd381f2eb201020105cd50ea59da63090694686"
+    dependencies:
+      object-assign "^4"
+      vary "^1"
+  
   create-error-class@^3.0.0:
     version "3.0.2"
     resolved "https://registry.yarnpkg.com/create-error-class/-/create-error-class-3.0.2.tgz#06be7abef947a3f14a30fd610671d401bca8b7b6"
@@ -646,6 +658,10 @@ Lockfile:
   encodeurl@~1.0.2:
     version "1.0.2"
     resolved "https://registry.yarnpkg.com/encodeurl/-/encodeurl-1.0.2.tgz#ad3ff4c86ec2d029322f5a02c3a9a606c95b3f59"
+  
+  es6-promise@3.2.1:
+    version "3.2.1"
+    resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-3.2.1.tgz#ec56233868032909207170c39448e24449dd1fc4"
   
   escape-html@~1.0.3:
     version "1.0.3"
@@ -780,7 +796,7 @@ Lockfile:
       snapdragon "^0.8.1"
       to-regex "^3.0.1"
   
-  express@^4.15.4:
+  express@^4.16.2:
     version "4.16.3"
     resolved "https://registry.yarnpkg.com/express/-/express-4.16.3.tgz#6af8a502350db3246ecc4becf6b5a34d22f7ed53"
     dependencies:
@@ -904,7 +920,7 @@ Lockfile:
       graceful-fs "^4.1.2"
       write "^0.2.1"
   
-  follow-redirects@^1.2.3:
+  follow-redirects@^1.2.5:
     version "1.4.1"
     resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.4.1.tgz#d8120f4518190f55aac65bb6fc7b85fcd666d6aa"
     dependencies:
@@ -1084,6 +1100,10 @@ Lockfile:
       is-number "^3.0.0"
       kind-of "^4.0.0"
   
+  hooks-fixed@2.0.2:
+    version "2.0.2"
+    resolved "https://registry.yarnpkg.com/hooks-fixed/-/hooks-fixed-2.0.2.tgz#20076daa07e77d8a6106883ce3f1722e051140b0"
+  
   http-errors@1.6.2:
     version "1.6.2"
     resolved "https://registry.yarnpkg.com/http-errors/-/http-errors-1.6.2.tgz#0a002cc85707192a7e7946ceedc11155f60ec736"
@@ -1141,7 +1161,7 @@ Lockfile:
       once "^1.3.0"
       wrappy "1"
   
-  inherits@2, inherits@2.0.3, inherits@^2.0.1, inherits@^2.0.3, inherits@~2.0.3:
+  inherits@2, inherits@2.0.3, inherits@^2.0.1, inherits@^2.0.3, inherits@~2.0.1, inherits@~2.0.3:
     version "2.0.3"
     resolved "https://registry.yarnpkg.com/inherits/-/inherits-2.0.3.tgz#633c2c83e3da42a502f52466022480f4208261de"
   
@@ -1378,9 +1398,9 @@ Lockfile:
     version "1.0.1"
     resolved "https://registry.yarnpkg.com/json-stable-stringify-without-jsonify/-/json-stable-stringify-without-jsonify-1.0.1.tgz#9db7b59496ad3f3cfef30a75142d2d930ad72651"
   
-  kareem@2.0.6:
-    version "2.0.6"
-    resolved "https://registry.yarnpkg.com/kareem/-/kareem-2.0.6.tgz#011ed59fd718bb147c63141a799fc888cd5a211b"
+  kareem@1.5.0:
+    version "1.5.0"
+    resolved "https://registry.yarnpkg.com/kareem/-/kareem-1.5.0.tgz#e3e4101d9dcfde299769daf4b4db64d895d17448"
   
   kind-of@^3.0.2, kind-of@^3.0.3, kind-of@^3.2.0:
     version "3.2.2"
@@ -1542,36 +1562,36 @@ Lockfile:
     dependencies:
       minimist "0.0.8"
   
-  mongodb-core@3.0.6:
-    version "3.0.6"
-    resolved "https://registry.yarnpkg.com/mongodb-core/-/mongodb-core-3.0.6.tgz#c1bf0ab868ece5b1d90917b58d7a8855cd8ba6ff"
+  mongodb-core@2.1.18:
+    version "2.1.18"
+    resolved "https://registry.yarnpkg.com/mongodb-core/-/mongodb-core-2.1.18.tgz#4c46139bdf3a1f032ded91db49f38eec01659050"
     dependencies:
       bson "~1.0.4"
-      require_optional "^1.0.1"
+      require_optional "~1.0.0"
   
-  mongodb@3.0.6:
-    version "3.0.6"
-    resolved "https://registry.yarnpkg.com/mongodb/-/mongodb-3.0.6.tgz#72d2444b14f9784869e0c33436c49c8dca5083e4"
+  mongodb@2.2.34:
+    version "2.2.34"
+    resolved "https://registry.yarnpkg.com/mongodb/-/mongodb-2.2.34.tgz#a34f59bbeb61754aec432de72c3fe21526a44c1a"
     dependencies:
-      mongodb-core "3.0.6"
+      es6-promise "3.2.1"
+      mongodb-core "2.1.18"
+      readable-stream "2.2.7"
   
-  mongoose-legacy-pluralize@1.0.2:
-    version "1.0.2"
-    resolved "https://registry.yarnpkg.com/mongoose-legacy-pluralize/-/mongoose-legacy-pluralize-1.0.2.tgz#3ba9f91fa507b5186d399fb40854bff18fb563e4"
-  
-  mongoose@^5.0.15:
-    version "5.0.15"
-    resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-5.0.15.tgz#5260a65e5777224ae6a24f5dc8b8d39b548c826c"
+  mongoose@^4.13.3:
+    version "4.13.12"
+    resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-4.13.12.tgz#8eb2bb9c820391cc524540950a8eb5f0992f1e8b"
     dependencies:
       async "2.1.4"
       bson "~1.0.4"
-      kareem "2.0.6"
+      hooks-fixed "2.0.2"
+      kareem "1.5.0"
       lodash.get "4.4.2"
-      mongodb "3.0.6"
-      mongoose-legacy-pluralize "1.0.2"
-      mpath "0.4.1"
-      mquery "3.0.0"
+      mongodb "2.2.34"
+      mpath "0.3.0"
+      mpromise "0.5.5"
+      mquery "2.3.3"
       ms "2.0.0"
+      muri "1.3.0"
       regexp-clone "0.0.1"
       sliced "1.0.1"
   
@@ -1585,13 +1605,17 @@ Lockfile:
       on-finished "~2.3.0"
       on-headers "~1.0.1"
   
-  mpath@0.4.1:
-    version "0.4.1"
-    resolved "https://registry.yarnpkg.com/mpath/-/mpath-0.4.1.tgz#ed10388430380bf7bbb5be1391e5d6969cb08e89"
+  mpath@0.3.0:
+    version "0.3.0"
+    resolved "https://registry.yarnpkg.com/mpath/-/mpath-0.3.0.tgz#7a58f789e9b5fd3c94520634157960f26bd5ef44"
   
-  mquery@3.0.0:
-    version "3.0.0"
-    resolved "https://registry.yarnpkg.com/mquery/-/mquery-3.0.0.tgz#e5f387dbabc0b9b69859e550e810faabe0ceabb0"
+  mpromise@0.5.5:
+    version "0.5.5"
+    resolved "https://registry.yarnpkg.com/mpromise/-/mpromise-0.5.5.tgz#f5b24259d763acc2257b0a0c8c6d866fd51732e6"
+  
+  mquery@2.3.3:
+    version "2.3.3"
+    resolved "https://registry.yarnpkg.com/mquery/-/mquery-2.3.3.tgz#221412e5d4e7290ca5582dd16ea8f190a506b518"
     dependencies:
       bluebird "3.5.0"
       debug "2.6.9"
@@ -1601,6 +1625,10 @@ Lockfile:
   ms@2.0.0:
     version "2.0.0"
     resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
+  
+  muri@1.3.0:
+    version "1.3.0"
+    resolved "https://registry.yarnpkg.com/muri/-/muri-1.3.0.tgz#aeccf3db64c56aa7c5b34e00f95b7878527a4721"
   
   mute-stream@0.0.7:
     version "0.0.7"
@@ -1722,7 +1750,7 @@ Lockfile:
     version "1.0.1"
     resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
   
-  object-assign@^4.0.1, object-assign@^4.1.0:
+  object-assign@^4, object-assign@^4.0.1, object-assign@^4.1.0:
     version "4.1.1"
     resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
   
@@ -1875,6 +1903,10 @@ Lockfile:
     version "1.0.4"
     resolved "https://registry.yarnpkg.com/prepend-http/-/prepend-http-1.0.4.tgz#d4f4562b0ce3696e41ac52d0e002e57a635dc6dc"
   
+  process-nextick-args@~1.0.6:
+    version "1.0.7"
+    resolved "https://registry.yarnpkg.com/process-nextick-args/-/process-nextick-args-1.0.7.tgz#150e20b756590ad3f91093f25a4f2ad8bff30ba3"
+  
   process-nextick-args@~2.0.0:
     version "2.0.0"
     resolved "https://registry.yarnpkg.com/process-nextick-args/-/process-nextick-args-2.0.0.tgz#a37d732f4271b4ab1ad070d35508e8290788ffaa"
@@ -1931,6 +1963,18 @@ Lockfile:
       ini "~1.3.0"
       minimist "^1.2.0"
       strip-json-comments "~2.0.1"
+  
+  readable-stream@2.2.7:
+    version "2.2.7"
+    resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.2.7.tgz#07057acbe2467b22042d36f98c5ad507054e95b1"
+    dependencies:
+      buffer-shims "~1.0.0"
+      core-util-is "~1.0.0"
+      inherits "~2.0.1"
+      isarray "~1.0.0"
+      process-nextick-args "~1.0.6"
+      string_decoder "~1.0.0"
+      util-deprecate "~1.0.1"
   
   readable-stream@^2.0.2, readable-stream@^2.0.6, readable-stream@^2.2.2:
     version "2.3.6"
@@ -2000,7 +2044,7 @@ Lockfile:
       caller-path "^0.1.0"
       resolve-from "^1.0.0"
   
-  require_optional@^1.0.1:
+  require_optional@~1.0.0:
     version "1.0.1"
     resolved "https://registry.yarnpkg.com/require_optional/-/require_optional-1.0.1.tgz#4cf35a4247f64ca3df8c2ef208cc494b1ca8fc2e"
     dependencies:
@@ -2274,6 +2318,12 @@ Lockfile:
       is-fullwidth-code-point "^2.0.0"
       strip-ansi "^4.0.0"
   
+  string_decoder@~1.0.0:
+    version "1.0.3"
+    resolved "https://registry.yarnpkg.com/string_decoder/-/string_decoder-1.0.3.tgz#0fc67d7c141825de94282dd536bec6b9bce860ab"
+    dependencies:
+      safe-buffer "~5.1.0"
+  
   string_decoder@~1.1.1:
     version "1.1.1"
     resolved "https://registry.yarnpkg.com/string_decoder/-/string_decoder-1.1.1.tgz#9cf1611ba62685d7030ae9e4ba34149c3af03fc8"
@@ -2501,7 +2551,7 @@ Lockfile:
     version "1.0.1"
     resolved "https://registry.yarnpkg.com/utils-merge/-/utils-merge-1.0.1.tgz#9f95710f50a267947b2ccc124741c1028427e713"
   
-  vary@~1.1.2:
+  vary@^1, vary@~1.1.2:
     version "1.1.2"
     resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
   
@@ -2558,10 +2608,17 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/yallist/-/yallist-3.0.2.tgz#8452b4bb7e83c7c188d8041c1a837c773d6d8bb9"
 
 Trace: 
-  Error: `install` has been replaced with `add` to add new dependencies. Run "yarn add cors" instead.
-      at new MessageError (C:\Users\ruffc\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:186:110)
-      at Object.<anonymous> (C:\Users\ruffc\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:21987:13)
-      at Generator.next (<anonymous>)
-      at step (C:\Users\ruffc\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:98:30)
-      at C:\Users\ruffc\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:109:13
-      at <anonymous>
+  Error: Command failed.
+  Exit code: 1
+  Command: C:\WINDOWS\system32\cmd.exe
+  Arguments: /d /s /c node scripts/seedDB.js
+  Directory: C:\Users\Jonathon Moore\Documents\Projects\Group_Projects\ancestrydotnom\clan.nom_nom_nom
+  Output:
+  
+      at ProcessTermError.MessageError (C:\Users\Jonathon Moore\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:186:110)
+      at new ProcessTermError (C:\Users\Jonathon Moore\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:226:113)
+      at ChildProcess.<anonymous> (C:\Users\Jonathon Moore\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:30281:17)
+      at emitTwo (events.js:126:13)
+      at ChildProcess.emit (events.js:214:7)
+      at maybeClose (internal/child_process.js:925:16)
+      at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
