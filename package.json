@@ -8,6 +8,7 @@
     "client": "node scripts/start-client.js",
     "start": "concurrently \"nodemon server.js\" \"npm run client\"",
     "build": "node scripts/build.js",
+    "seed": "node scripts/seedDB.js",
     "installDeps": "yarn && cd client && yarn"
   },
   "author": "Team 4/5 Hatted",
