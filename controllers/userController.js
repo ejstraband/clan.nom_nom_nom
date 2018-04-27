@@ -1,12 +1,17 @@
 const db = require("../models");
 
-// Defining methods for the UserController
 module.exports = {
   findAll: function(req, res) {
-    db.User
+    db.user
       .find(req.query)
       .sort({ date: -1 })
-      .then(dbUser => res.json(dbUser))
+      .then(dbuser => res.json(dbuser))
+      .catch(err => res.status(422).json(err));
+  },
+  findByEmail: function(req, res) {
+    db.user      
+      .findOne({'email': req.params.email})
+      .then(dbuser => res.json(dbuser))
       .catch(err => res.status(422).json(err));
   },
   findById: function(req, res) {
@@ -28,16 +33,16 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   update: function(req, res) {
-    db.User
+    db.user
       .findOneAndUpdate({ _id: req.params.id }, req.body)
-      .then(dbUser => res.json(dbUser))
+      .then(dbuser => res.json(dbuser))
       .catch(err => res.status(422).json(err));
   },
   remove: function(req, res) {
-    db.User
+    db.user
       .findById({ _id: req.params.id })
-      .then(dbUser => dbUser.remove())
-      .then(dbUser => res.json(dbUser))
+      .then(dbuser => dbuser.remove())
+      .then(dbuser => res.json(dbuser))
       .catch(err => res.status(422).json(err));
   }
 };

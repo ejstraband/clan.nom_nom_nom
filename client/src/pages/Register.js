@@ -35,7 +35,15 @@ class SignUp extends Component {
       };
       API.saveUser(user)
         .then(res => console.log(res))
-        .catch(err => console.log("Register.js says, User save " + err));
+				.catch(err => console.log("Register.js says, User save " + err));
+				this.setState({
+					user: [],
+					email: "",
+					name: "",
+					password: "",
+					password2: "",
+				});
+				this.props.history.push("/login");
     }
   };
 
@@ -57,12 +65,14 @@ class SignUp extends Component {
 						placeholder="Full Name (required)"
 					/>
 					<Input
+						type="password"
 						value={this.state.password}
 						onChange={this.handleInputChange}
 						name="password"
 						placeholder="Password (required)"
 					/>
 					<Input
+						type="password"
 						value={this.state.password2}
 						onChange={this.handleInputChange}
 						name="password2"

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import API from "../../utils/API";
+import API from "../utils/API";
 import { Input, FormBtn } from "../components/Form";
 import '../index.css'
 
@@ -24,7 +24,25 @@ class Login extends Component {
 	handleFormSubmit = event => {
 		event.preventDefault();
 		if (this.state.email && this.state.password) {
-			console.log("login submitted")
+			console.log("login submitted");
+			API.getUser(this.state.email)
+			.then(res => {
+				console.log(res);
+				if (res.body.email){
+					this.props.history.push("/recipes");
+				}
+				else {
+					this.setState({
+						user: [],
+						email: "",
+						password: "",
+					});
+					this.props.history.push("/login");
+				}
+			})
+			.catch(err => {
+				console.log("Register.js says, User get " + err);
+			});
 		}
 	};
 	
@@ -34,6 +52,7 @@ class Login extends Component {
 				<h1>Log in</h1>
 				<form>
 					<Input
+						type="email"
 						value={this.state.email}
 						onChange={this.handleInputChange}
 						name="email"
@@ -47,7 +66,7 @@ class Login extends Component {
 						placeholder="Password"
 					/>
 					<FormBtn
-						disabled={!(this.state.email && this.state.password && this.state.password2 && (this.state.password === this.state.password2))}
+						disabled={!(this.state.email && this.state.password)}
 						onClick={this.handleFormSubmit}
 					>
 						Log in

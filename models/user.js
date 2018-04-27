@@ -1,10 +1,12 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const bcrypt = require('bcryptjs');
 
 // User Schema
 const userSchema = new Schema({
   email: {
     type: String,
+    index: true,
     required: true
   },
   name: { 
@@ -21,5 +23,4 @@ const userSchema = new Schema({
 const User = mongoose.model('User', userSchema);
 
 module.exports = User;
-
 
