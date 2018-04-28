@@ -1,0 +1,51 @@
+.RecipeCard {
+  box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.1),
+    0 2px 9px 0 rgba(62, 57, 107, 0.1);
+  border-radius: 8px;
+
+  margin: 10px;
+  display: flex;
+  flex-flow: column;
+  min-height: 300px;
+  padding: 10px;
+  background-size: cover !important;
+
+  transition: all 0.3s;
+}
+
+.RecipeCard:hover {
+  box-shadow: 0 0 5px 0 rgba(26, 26, 67, 0.05),
+    0 20px 125px -25px rgba(50, 50, 93, 0.5),
+    -18px 20px 75px -37.5px rgba(0, 0, 0, 0.6);
+  transform: translateY(-1px);
+}
+
+.RecipeCard__title {
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  fill: currentColor;
+  display: flex;
+  flex-flow: row;
+}
+.RecipeCard__title a {
+  color: inherit !important;
+}
+.RecipeCard svg {
+  vertical-align: middle;
+}
+
+.RecipeCard__description {
+}
+
+.RecipeCard__buttons {
+  display: flex;
+  flex-flow: row;
+  margin-top: 10px;
+}
+
+.RecipeCard__more {
+  margin-top: 20px;
+  border-top: 1px solid gray;
+  padding: 10px 0px;
+}
