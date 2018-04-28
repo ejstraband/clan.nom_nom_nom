@@ -38,7 +38,7 @@ const API = {
   }
 };
 
-// just expose on the window object so I can play with it from the console
+// I just expose on the window object so I can play with it from the console
 window.api = API;
 
 export default API;
