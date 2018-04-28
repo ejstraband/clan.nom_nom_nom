@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export default {
+const API = {
   // USERS
   // Gets all users
   getUsers: function() {
@@ -16,7 +16,7 @@ export default {
   },
   // Saves a user to the database
   saveUser: function(userData) {
-    console.log('user data is: ', userData)
+    console.log("user data is: ", userData);
     return axios.post("/api/users", userData);
   },
   // RECIPES
@@ -37,3 +37,8 @@ export default {
     return axios.post("/api/recipes", recipeData);
   }
 };
+
+// I just expose on the window object so I can play with it from the console
+window.api = API;
+
+export default API;
