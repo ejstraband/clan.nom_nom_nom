@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import API from "../utils/API";
 import { Input, FormBtn } from "../components/Form";
 
-// console.log('Register.js says: API is ,', API)
-
 class SignUp extends Component {
 	state = {
 		user: [],
@@ -12,10 +10,6 @@ class SignUp extends Component {
 		password: "",
 		password2: "",
 	};
-
-	// componentDidMount() {
-	// 	console.log("Register.js says: Component did mount")
-  // }
 
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -26,7 +20,6 @@ class SignUp extends Component {
 
   handleFormSubmit = event => {
 		event.preventDefault();
-		// console.log("Register.js says, event is: " + event);
     if (this.state.email && this.state.name && (this.state.password === this.state.password2)) {
 			const user = {
         email: this.state.email,
@@ -36,14 +29,14 @@ class SignUp extends Component {
       API.saveUser(user)
         .then(res => console.log(res))
 				.catch(err => console.log("Register.js says, User save " + err));
-				this.setState({
-					user: [],
-					email: "",
-					name: "",
-					password: "",
-					password2: "",
-				});
-				this.props.history.push("/login");
+			this.setState({
+				user: [],
+				email: "",
+				name: "",
+				password: "",
+				password2: "",
+			});
+			this.props.history.push("/login");
     }
   };
 
