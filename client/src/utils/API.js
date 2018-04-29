@@ -36,6 +36,7 @@ const API = {
   saveRecipe: function(recipeData) {
     return axios.post("/api/recipes", recipeData);
   },
+  
   // NEW RECIPES Routes
   // Gets all of the new recipes
   getNewRecipes: function() {

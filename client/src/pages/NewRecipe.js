@@ -66,12 +66,14 @@ class NewRecipe extends Component {
 						onChange={this.handleInputChange}
 						name="title"
 						placeholder="Name of recipe"
+						title="What is the title of this recipe?"
 					/>
 					<Input
 						value={this.state.prep_time}
 						onChange={this.handleInputChange}
 						name="prep_time"
-						placeholder="Prep time"
+						placeholder="Prep time in minutes ie 30 = 30 min's"
+						title="How long would preperation take in minutes?"
 					/>
           <Input
 						value={this.state.cook_time}
@@ -102,6 +104,7 @@ class NewRecipe extends Component {
 						onChange={this.handleInputChange}
 						name="servings"
 						placeholder="Servings"
+						title="Please enter the serving size"
 					/>
 					<Input
 						value={this.state.short_desc}
