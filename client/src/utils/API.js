@@ -35,6 +35,24 @@ const API = {
   // Saves a recipe to the database
   saveRecipe: function(recipeData) {
     return axios.post("/api/recipes", recipeData);
+  },
+  // NEW RECIPES Routes
+  // Gets all of the new recipes
+  getNewRecipes: function() {
+    return axios.get("/api/newRecipes");
+  },
+  // get the new recipe by ID
+  getNewRecipe: function(id) {
+    return axios.get("/api/newRecipes" + id)
+  },
+  // Delete the recipe with the given id
+  deleteNewRecipe: function(id) {
+    return axios.delete("/api/newRecipes" + id);
+  },
+  // Save the recipe data to the DB.
+  saveNewRecipe: function(newRecipeData) {
+    console.log("New Recipe data is: ", newRecipeData);
+    return axios.post("/api/newRecipes" + newRecipeData);
   }
 };
 
