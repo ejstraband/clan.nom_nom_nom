@@ -35,8 +35,8 @@ class NewRecipe extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     if (this.state.title && this.state.categories && this.state.ingredients && this.state.directions && this.state.notes) {
-      API.saveRecipe({
-        title: this.state.title,
+	  const recipe = {
+		title: this.state.title,
         rating: 0,
         prep_time: this.state.prep_time,
         cook_time: this.state.cook_time,
@@ -50,9 +50,29 @@ class NewRecipe extends Component {
         ingredients: this.state.ingredients,
         directions: this.state.directions,
         notes: this.state.notes, 
-      })
-        .then(console.log('Recipe Saved'))
-        .catch(err => console.log(err));
+	  };
+	  	API.saveRecipe(recipe)
+        	.then(res => {
+				console.log('Recipe Saved ' + res);
+				this.setState({ // set the states of the information back to blank if the push worked.
+					recipe: [],
+					title: "",
+					rating: 0,
+					prep_time: "",
+					cook_time: "",
+					difficulty: "",
+					source: "",
+					author: "",
+					poster: "",
+					servings: 0,
+					short_desc: "",
+					categories: [],
+					ingredients: [],
+					directions: [],
+					notes: [],   
+				})
+			}) // log out the information submitted as a check
+			.catch(err => console.log('NewRecipe.js says, New Recipe safe ' + err));
     }
   };
 
@@ -75,7 +95,7 @@ class NewRecipe extends Component {
 						placeholder="Prep time in minutes ie 30 = 30 min's"
 						title="How long would preperation take in minutes?"
 					/>
-          <Input
+         			<Input
 						value={this.state.cook_time}
 						onChange={this.handleInputChange}
 						name="cook_time"
@@ -99,7 +119,7 @@ class NewRecipe extends Component {
 						name="author"
 						placeholder="Whose recipe is this?"
 					/>
-          <Input
+          			<Input
 						value={this.state.servings}
 						onChange={this.handleInputChange}
 						name="servings"
@@ -124,7 +144,7 @@ class NewRecipe extends Component {
 						name="ingredients"
 						placeholder="Ingredients"
 					/>
-          <Input
+          			<Input
 						value={this.state.directions}
 						onChange={this.handleInputChange}
 						name="directions"

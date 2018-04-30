@@ -38,7 +38,7 @@ const API = {
   },
   
   // NEW RECIPES Routes
-  // Gets all of the new recipes
+  // These may not be needed as the information could be saved via the routes above.
   getNewRecipes: function() {
     return axios.get("/api/newRecipes");
   },
