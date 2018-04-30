@@ -5,11 +5,13 @@
   "dependencies": {
     "axios": "^0.18.0",
     "bcryptjs": "^2.4.3",
+    "create-react-class": "^15.6.3",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
     "react-parallax": "^1.7.0",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "1.1.4"
+    "react-scripts": "1.1.4",
+    "react-select": "^2.0.0-beta.2"
   },
   "scripts": {
     "start": "cross-env REACT_APP_API_URL=http://localhost:3001 react-scripts start",
