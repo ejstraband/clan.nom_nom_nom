@@ -5,7 +5,7 @@ mongoose.Promise = global.Promise;
 // This file empties the Books collection and inserts the books below
 
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/clannomnom",
+  "mongodb://localhost/clannomnom",
 );
 
 const recipeSeed = [
@@ -56,7 +56,7 @@ db.recipe
   .then(() => db.recipe.collection.insertMany(recipeSeed))
   .then(data => {
 
-    console.log(data.insertedIds.length,  " records inserted!");
+    console.log(data.insertedIds.length + " records inserted!");
 
     process.exit(0);
   })
