@@ -5,6 +5,18 @@ const userController = require("../../controllers/userController");
 router.route("/")
   .post(userController.create)
   .get(userController.findAll);
+//
+
+// Find and create user ancestors
+router.route("/ancestors")
+  .get(userController.findAll)
+  .post(userController.create);
+// 
+
+// And by ID
+router.route("/ancestors/:_id")
+  .get(userController.findById)
+  .delete(userController.remove);
 
 // Matches with "/api/users/:id"
 router
