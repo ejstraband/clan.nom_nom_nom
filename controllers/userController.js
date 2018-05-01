@@ -24,7 +24,7 @@ module.exports = {
       .then(dbUser => res.json(dbUser))
       .catch(err => res.status(422).json(err));
   },
-  create: function(req, res) {s
+  create: function(req, res) {
     const user = {
       _id: req.body._id,
       email: req.body.email,
