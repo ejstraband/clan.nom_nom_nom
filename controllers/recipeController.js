@@ -11,7 +11,7 @@ const recipeController = {
   },
   findById: (req, res) => {
     db.Recipe
-      .findById(req.params.id)
+      .findOne({"_id": req.params._id})
       .then(dbRecipe => res.json(dbRecipe))
       .catch(err => res.status(422).json(err));
   },

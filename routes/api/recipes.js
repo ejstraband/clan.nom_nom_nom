@@ -8,7 +8,7 @@ router.route('/')
 
 // "api/recipes/:id"
 router
-  .route('/:id')
+  .route('/:_id')
   .get(recipeController.findById)
   .put(recipeController.update)
   .delete(recipeController.remove);
