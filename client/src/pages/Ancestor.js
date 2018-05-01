@@ -6,7 +6,6 @@ import axios from 'axios';
 class Ancestor extends Component {
 	state = {
 		users: [],
-		relationships: ["union", "parent", "other", "none"],
 		email: "",
 		name: "",
 		linkTo: null,
@@ -72,7 +71,7 @@ class Ancestor extends Component {
 
 		return (
 			<div className='container col-6'>
-				<h1>Add an ancestor</h1>
+				<h1>Add an Ancestor</h1>
 				<form>
 					<Input
 						value={this.state.name}
