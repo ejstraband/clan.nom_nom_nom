@@ -3,10 +3,12 @@ const router = require("express").Router();
 const apiRoutes = require("./api");
 const apiUserRoutes = require("./api/users.js");
 const apiRecipeRoutes = require("./api/recipes");
+const apiFindByEmail = require("./api/findByEmail");
 
 // API Routes
 router.use("/api", apiRoutes);
 router.use("/api/users", apiUserRoutes);
+router.use("/api/findByEmail", apiFindByEmail);
 router.use("/api/recipes", apiRecipeRoutes);
 
 // If no API routes are hit, send the React app

@@ -6,13 +6,13 @@ router.route("/")
   .post(userController.create)
   .get(userController.findAll);
 
-// Matches with "/api/users/:email"
-// router
-//   .route("/:_id")
-//   .get(userController.findById)
-//   .put(userController.update)
-//   .delete(userController.remove);
-//
+// Matches with "/api/users/:id"
+router
+  .route("/:_id")
+  .get(userController.findById)
+  .put(userController.update)
+  .delete(userController.remove);
+
 router
   .route("/:email")
   .get(userController.findByEmail)
@@ -20,4 +20,5 @@ router
   .delete(userController.remove);
 
 
+// router.get('/', () => userController.findAll);
 module.exports = router;
