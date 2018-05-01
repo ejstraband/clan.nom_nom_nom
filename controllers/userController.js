@@ -10,8 +10,12 @@ module.exports = {
   },
   findByEmail: function(req, res) {
     db.user      
-      .findOne({'email': req.params.email})
-      .then(dbuser => res.json(dbuser))
+      .findOne({"email": req.params.email})
+      .then(dbuser => {
+        console.log(req.params.email);
+        res.json(dbuser);
+        
+      })
       .catch(err => res.status(422).json(err));
   },
   findById: function(req, res) {
@@ -20,7 +24,7 @@ module.exports = {
       .then(dbUser => res.json(dbUser))
       .catch(err => res.status(422).json(err));
   },
-  create: function(req, res) {
+  create: function(req, res) {s
     const user = {
       _id: req.body._id,
       email: req.body.email,

@@ -7,10 +7,17 @@ router.route("/")
   .get(userController.findAll);
 
 // Matches with "/api/users/:email"
+// router
+//   .route("/:_id")
+//   .get(userController.findById)
+//   .put(userController.update)
+//   .delete(userController.remove);
+//
 router
-  .route("/:_id")
-  .get(userController.findById)
+  .route("/:email")
+  .get(userController.findByEmail)
   .put(userController.update)
   .delete(userController.remove);
+
 
 module.exports = router;
