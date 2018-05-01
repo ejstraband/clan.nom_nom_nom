@@ -10,6 +10,11 @@ router.route("/")
 router
   .route("/:email")
   .get(userController.findByEmail)
+  .delete(userController.remove);
+  
+  router.route("/ancestor")
+  .get(userController.findAll)
+  .post(userController.create)
   .put(userController.update)
   .delete(userController.remove);
 

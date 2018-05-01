@@ -7,7 +7,6 @@ const userSchema = new Schema({
   email: {
     type: String,
     index: true,
-    required: true
   },
   name: { 
     type: String, 
@@ -15,7 +14,18 @@ const userSchema = new Schema({
   },
   password: { 
     type: String, 
-    required: true 
+  },
+  linkTo: {
+    type: String
+  },
+  relationship: {
+    type: String
+  },
+  bio: {
+    type: String
+  },
+  status: {
+    type: String
   },
   date: { type: Date, default: Date.now }
 }, { _id: true });

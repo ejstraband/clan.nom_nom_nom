@@ -58,25 +58,36 @@ const Navbar = props => (
 
       <ul className="navbar-nav ml-auto">
         <li
-            className={
-              window.location.pathname === "/login"
-                ? "nav-item active"
-                : "nav-item"
-            }
-          >
-            <Link to="/login" className="nav-link">
-              Login
-            </Link>
-          </li>
-          <li
-            className={
-              window.location.pathname === "/register"
-                ? "nav-item active"
-                : "nav-item"
-            }
-          >
-            <Link to="/signup" className="nav-link">
-              Register
+          className={
+            window.location.pathname === "/ancestor"
+              ? "nav-item active"
+              : "nav-item"
+          }
+        >
+          <Link to="/ancestor" className="nav-link">
+            Ancestor
+          </Link>
+        </li>
+        <li
+          className={
+            window.location.pathname === "/login"
+              ? "nav-item active"
+              : "nav-item"
+          }
+        >
+          <Link to="/login" className="nav-link">
+            Login
+          </Link>
+        </li>
+        <li
+          className={
+            window.location.pathname === "/register"
+              ? "nav-item active"
+              : "nav-item"
+          }
+        >
+          <Link to="/signup" className="nav-link">
+            Register
           </Link>
         </li>
       </ul>
