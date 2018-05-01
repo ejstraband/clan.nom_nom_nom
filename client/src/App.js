@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Recipes from "./pages/Recipes";
 import About from "./pages/About";
 import Search from "./pages/Search";
+import Ancestor from "./pages/Ancestor";
 import Login from "./pages/Login";
 import SignUp from "./pages/Register";
 import NewRecipe from "./pages/NewRecipe";
@@ -20,6 +21,7 @@ const App = () => (
         <Route exact path="/recipes" component={Recipes} />
         <Route exact path="/newRecipe" component={NewRecipe} />
         <Route exact path="/search" component={Search} />
+        <Route exact path="/ancestor" component={Ancestor} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/signup" component={SignUp} />
       </Wrapper>

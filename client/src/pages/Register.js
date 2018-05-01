@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import API from "../utils/API";
-import { Input, FormBtn } from "../components/Form";
+import { Input, FormBtn, TextArea } from "../components/Form";
 
 class SignUp extends Component {
 	state = {
@@ -9,6 +9,10 @@ class SignUp extends Component {
 		name: "",
 		password: "",
 		password2: "",
+		linkTo: "",
+		relationship: "",
+		bio: "",
+		status: ""
 	};
 
   handleInputChange = event => {
@@ -25,6 +29,10 @@ class SignUp extends Component {
         email: this.state.email,
 				name: this.state.name,
 				password: this.state.password,
+				linkTo: this.state.linkTo,
+				relationship: this.state.relationship,
+				bio: this.state.bio,
+				status: "active"
       };
       API.saveUser(user)
         .then(res => console.log(res))
@@ -35,6 +43,11 @@ class SignUp extends Component {
 				name: "",
 				password: "",
 				password2: "",
+				linkTo: "",
+				relationship: "",
+				bio: "",
+				status: ""
+		
 			});
 			this.props.history.push("/login");
     }
@@ -70,6 +83,12 @@ class SignUp extends Component {
 						onChange={this.handleInputChange}
 						name="password2"
 						placeholder="Repeat password"
+					/>
+					<TextArea
+						value={this.state.bio}
+						onChange={this.handleInputChange}
+						name="bio"
+						placeholder="Tell us something about yourself"
 					/>
 					<FormBtn
 						disabled={!(this.state.email && this.state.password && this.state.password2 && (this.state.password === this.state.password2))}

@@ -20,6 +20,13 @@ router.route("/ancestors/:_id")
 
 // Matches with "/api/users/:id"
 router
+  .route("/:email")
+  .get(userController.findByEmail)
+  .delete(userController.remove);
+  
+  router.route("/ancestor")
+  .get(userController.findAll)
+  .post(userController.create)
   .route("/:_id")
   .get(userController.findById)
   .put(userController.update)
