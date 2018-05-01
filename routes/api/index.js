@@ -1,8 +1,11 @@
 const router = require("express").Router();
-const userRoutes = require("./users");
 const recipeRoutes = require("./recipes");
+const userRoutes = require("./users");
+const emailRoute = require("./findByEmail");
 
-router.use("/users", userRoutes);
-router.use("/recipes", recipeRoutes);
+// Book routes
+router.use("/api/recipes", recipeRoutes);
+router.use("/api/users", userRoutes);
+router.use("/api/findByEmail", emailRoute);
 
 module.exports = router;
