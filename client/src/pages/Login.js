@@ -25,10 +25,13 @@ class Login extends Component {
 		event.preventDefault();
 		if (this.state.email && this.state.password) {
 			console.log("login submitted");
-			API.getUser(this.state.email)
+			// API.getUser(this.state.email)
+			API.loginUser(this.state)
 			.then(res => {
-				console.log(res);
-				if (res.body.email){
+				console.log(res.data.email);
+				if (res.data.email === this.state.email && res.data.password){
+					console.log("successful login")
+					// redirect
 					this.props.history.push("/recipes");
 				}
 				else {
@@ -37,11 +40,12 @@ class Login extends Component {
 						email: "",
 						password: "",
 					});
+					// return to login on unsuccessfull login
 					this.props.history.push("/login");
 				}
 			})
 			.catch(err => {
-				console.log("Register.js says, User get " + err);
+				console.log("Login.js says, User get " + err);
 			});
 		}
 	};
