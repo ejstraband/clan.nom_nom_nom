@@ -4,7 +4,6 @@ import { Input, FormBtn } from "../components/Form";
 
 class NewRecipe extends Component {
 	state = {
-    recipe: [],
     title: "",
     rating: 0,
     prep_time: "",
@@ -51,11 +50,10 @@ class NewRecipe extends Component {
         directions: this.state.directions,
         notes: this.state.notes, 
 	  };
-	  	API.saveRecipe(newRecipe)
+	  	API.saveNewRecipe(newRecipe)
         	.then(res => {
 				console.log('Recipe Saved ' + res);
 				this.setState({ // set the states of the information back to blank if the push worked.
-					recipe: [],
 					title: "",
 					rating: 0,
 					prep_time: "",
