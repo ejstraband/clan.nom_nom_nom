@@ -5,7 +5,7 @@ import "./SearchForm.css";
 const SearchForm = props => (
   <form className="search">
     <div className="form-group">
-      <label htmlFor="recipe_search"></label>
+      <label htmlFor="recipe_search" />
       <input
         value={props.search}
         onChange={props.handleInputChange}
