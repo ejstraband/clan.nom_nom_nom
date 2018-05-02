@@ -51,6 +51,24 @@ const recipeSeed = [
   },
 ];
 
+const familiesSeed = [
+  {
+    familyName: "Clan McCloud"
+  },
+  {
+    familyName: "The Skywalkers"
+  },
+  {
+    familyName: "The Flinstones"
+  },
+  {
+    familyName: "The Simpsons"
+  },
+  {
+    familyName: "The Adams Family"
+  }
+]
+
 db.recipe
   .remove({})
   .then(() => db.recipe.collection.insertMany(recipeSeed))
@@ -66,3 +84,17 @@ db.recipe
 
   });
 
+  db.family
+  .remove({})
+  .then(() => db.family.collection.insertMany(familiesSeed))
+  .then(data => {
+
+    console.log(data.insertedIds.length + " records inserted!");
+
+    process.exit(0);
+  })
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+
+  });
