@@ -5,6 +5,7 @@ const recipeController = require('../../controllers/recipeController');
 router.route('/')
   .get(recipeController.findAll)
   .post(recipeController.create);
+//
 
 // "api/recipes/:id"
 router
@@ -12,5 +13,6 @@ router
   .get(recipeController.findById)
   .put(recipeController.update)
   .delete(recipeController.remove);
+//
 
 module.exports = router;
