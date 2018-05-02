@@ -1,4 +1,5 @@
 const db = require("../models");
+const bcrypt = require('bcryptjs');
 
 module.exports = {
   new: function(req, res) {
@@ -9,20 +10,23 @@ module.exports = {
       .then(dbuser => {
         console.log(dbuser.password);
         console.log(req.body.password);
-        if (req.body.password === dbuser.password){
-          // passwords match
-          res.send({
-            status: 200,
-            message: 'success'
-          });                
-        }
-        else {
-          // We are assigning status code 299 = 'passwords do not match'
-          res.send({
-            status: 299,
-            message: 'password mismatch'
-          }) 
-        }
+        bcrypt.compare(req.body.password, dbuser.password, function(err, result) {
+          // res === true
+          if (result){
+            // passwords match
+            res.send({
+              status: 200,
+              message: 'success'
+            });                
+          }
+          else {
+            // We are assigning status code 299 = 'passwords do not match'
+            res.send({
+              status: 299,
+              message: 'password mismatch'
+            }) 
+          }
+        });
       })
       .catch(err =>
         res.send({

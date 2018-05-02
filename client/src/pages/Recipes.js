@@ -6,7 +6,7 @@ import Row from "../components/Row";
 import Col from "../components/Col";
 import RecipeList from "../components/RecipeList";
 
-import api from "../utils/API";
+// import api from "../utils/API";
 class Recipes extends React.Component {
   state = {
     recipes: []
