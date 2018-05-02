@@ -36,12 +36,13 @@ const API = {
   getRecipe: function(id) {
     return axios.get("/api/recipes/" + id);
   },
-  // Deletes the recipe with the given id
+  // Deletes an entered recipe with the given id
   deleteRecipe: function(id) {
     return axios.delete("/api/recipes/" + id);
   },
-  // Saves a recipe to the database
+  // Saves a ~NEW~ recipe to the database
   saveRecipe: function(recipeData) {
+    console.log('I\'m going to do it! I\'m going to save this recipe!');
     return axios.post("/api/recipes", recipeData);
   }
 };

@@ -27,7 +27,8 @@ const userSchema = new Schema({
     type: String
   },
   date: { type: Date, default: Date.now }
-}, { _id: true });
+// }, { _id: true });
+});
 
 const User = mongoose.model('User', userSchema);
 
