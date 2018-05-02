@@ -3,6 +3,13 @@ import axios from "axios";
 const API = {
   
   // USERS
+
+  // SESSION
+  // used by login
+  loginUser: function(credentials) {
+    return axios.post("/api/session/new", credentials);
+  },
+
   // Gets all users
   getUsers: function() {
     return axios.get("/api/users");
@@ -10,14 +17,6 @@ const API = {
   // Gets the user with the given id
   getUser: function(id) {
     return axios.get("/api/users/" + id);
-  },
-  // Gets the user with an email
-  getUser: function(email) {
-    return axios.get("/api/findByEmail/" + email);
-  },
-  // SESSION
-  loginUser: function(credentials) {
-    return axios.post("/api/session/new", credentials);
   },
   // Deletes the user with the given id
   deleteUser: function(id) {
