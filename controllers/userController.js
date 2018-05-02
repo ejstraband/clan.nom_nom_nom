@@ -8,16 +8,16 @@ module.exports = {
       .then(dbuser => res.json(dbuser))
       .catch(err => res.status(422).json(err));
   },
-  findByEmail: function(req, res) {
-    db.user      
-      .findOne({"email": req.params.email})
-      .then(dbuser => {
-        console.log(req.params.email);
-        res.json(dbuser);
+  // findByEmail: function(req, res) {
+  //   db.user      
+  //     .findOne({"email": req.params.email})
+  //     .then(dbuser => {
+  //       console.log(req.params.email);
+  //       res.json(dbuser);
         
-      })
-      .catch(err => res.status(422).json(err));
-  },
+  //     })
+  //     .catch(err => res.status(422).json(err));
+  // },
   findById: function(req, res) {
     db.user
       .findOne({"_id": req.params._id})
