@@ -42,7 +42,7 @@ const API = {
   },
   // Saves a ~NEW~ recipe to the database
   saveRecipe: function(recipeData) {
-    console.log('I\'m going to do it! I\'m going to save this recipe!');
+    console.log('I\'m going to do it! I\'m going to save this recipe!', recipeData);
     return axios.post("/api/recipes", recipeData);
   }
 };

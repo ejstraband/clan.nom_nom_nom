@@ -4,15 +4,14 @@ import { Input, FormBtn } from "../components/Form";
 
 class NewRecipe extends Component {
 	state = {
-    recipe: [],
     title: "",
     rating: 0,
     prep_time: "",
     cook_time: "",
     difficulty: "",
     source: "",
-    author: "",
-    poster: "",
+	author: "",
+	poster: "",
     servings: 0,
     short_desc: "",
     categories: [],
@@ -35,7 +34,7 @@ class NewRecipe extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     if (this.state.title && this.state.categories && this.state.ingredients && this.state.directions && this.state.notes) {
-	  	const newRecipe = {
+		const newRecipe = {
 			title: this.state.title,
 			rating: 0,
 			prep_time: this.state.prep_time,
@@ -50,27 +49,26 @@ class NewRecipe extends Component {
 			ingredients: this.state.ingredients,
 			directions: this.state.directions,
 			notes: this.state.notes,  
-	  };
-	API.saveRecipe(newRecipe)
-        .then(res => {
-			console.log('Recipe Saved' + res);
-			this.setState({ //set the states of the information back to the default blanks if the push succeeds
-				title: "",
-				rating: 0,
-				prep_time: "",
-				cook_time: "",
-				difficulty: "",
-				source: "",
-				author: "",
-				poster: "",
-				servings: 0,
-				short_desc: "",
-				categories: [],
-				ingredients: [],
-				directions: [],
-				notes: [],  
+	 };
+		API.saveRecipe(newRecipe)
+        	.then(res => {
+				console.log('Recipe Saved' + res);
+				this.setState({ //set the states of the information back to the default blanks if the push succeeds
+					title: "",
+					rating: 0,
+					prep_time: "",
+					cook_time: "",
+					difficulty: "",
+					source: "",
+					author: "",
+					servings: 0,
+					short_desc: "",
+					categories: [],
+					ingredients: [],
+					directions: [],
+					notes: [],  
+				})
 			})
-		})
 		//log out the information submitted as a simple check
         .catch(err => console.log('NewRecipe.js says, new recipe not saved due to: ' + err));
     }
