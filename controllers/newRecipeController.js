@@ -16,24 +16,27 @@ module.exports ={
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
+    console.log('creating Recipe!!!')
     const newRecipe = {
-      _id: req.body._id,
+      // _id: req.body._id,
       title: req.body.title,
       rating: req.body.rating,
-      prepTime: req.body.prep_time,
-      cookTime: req.body.cook_time,
+      prep_time: req.body.prep_time,
+       cook_time: req.body.cook_time,
       difficulty: req.body.difficulty,
-      source: req.body.source,
-      author: req.body.author,
+       source: req.body.source,
+       author: req.body.author,
       servings: req.body.servings,
-      shortDesc: req.body.short_desc,
-      catetories: req.body.catetories,
-      ingredients: req.body.ingredients,
+      short_desc: req.body.short_desc,
+     catetories: req.body.categories,
+       ingredients: req.body.ingredients,
       directions: req.body.directions,
       notes: req.body.notes,
     };
+    console.log(newRecipe)
     db.newRecipe
-      .create(req.body)
+      // .create(req.body)
+      .create(newRecipe)
       .then(dbNewRecipe => res.json(dbNewRecipe))
       .catch(err => res.status(422).json(err));
   },

@@ -34,6 +34,7 @@ const API = {
   },
   // Saves a recipe to the database
   saveRecipe: function(recipeData) {
+    console.log('in saveRecipe!!!')
     return axios.post("/api/recipes", recipeData);
   },
   
@@ -53,7 +54,7 @@ const API = {
   // Save the recipe data to the DB.
   saveNewRecipe: function(newRecipeData) {
     console.log("New Recipe data is: ", newRecipeData);
-    return axios.post("/api/newRecipes" + newRecipeData);
+    return axios.post("/api/newRecipes", newRecipeData);
   }
 };
 

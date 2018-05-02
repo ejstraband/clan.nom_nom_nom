@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import API from "../utils/API";
 import { Input, FormBtn } from "../components/Form";
 
+
+console.log('API is: ', API)
+
 class NewRecipe extends Component {
 	state = {
     title: "",
@@ -17,7 +20,8 @@ class NewRecipe extends Component {
     categories: [],
     ingredients: [],
     directions: [],
-    notes: [],    
+	notes: [],    
+	diffOptions: ["ease", "moderate", "hard"],
 	};
 
 	componentDidMount() {
