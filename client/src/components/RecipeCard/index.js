@@ -6,7 +6,7 @@ import "./index.css";
 import heartEmpty from "./heart-empty";
 import heartFull from "./heart-full";
 
-import CardBtn from "../CardBtn";
+// import CardBtn from "../CardBtn";
 
 class RecipeCard extends React.Component {
   state = {
@@ -41,7 +41,7 @@ class RecipeCard extends React.Component {
     };
     return (
       <div className="RecipeCard">
-        <img style={{ width: "100%" }} src={recipe.image} />
+        <img style={{ width: "100%" }} src={recipe.image} alt="" />
         {this.renderTitle()}
 
         <div className="RecipeCard__description">

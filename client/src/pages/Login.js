@@ -35,7 +35,8 @@ class Login extends Component {
 				console.log(res.data.status);
 				if (res.data.status === 200){
 					// success - email and password are valid
-					this.setState({message: 'Success!'})
+					this.setState({message: 'Success!'});
+					this.props.history.push("/recipes");
 				} else if (res.data.status === 299) {
 					// user exists but password is wrong
 					this.setState({message: "Wrong password"})
@@ -43,12 +44,12 @@ class Login extends Component {
 					// user not found
 					this.setState({
 						message: 'User not found',
-						password: "",
 					})
 				}
 
 			})
 			.catch(err => {
+				// we may never hit this now?
 				console.log("Login.js says, User get " + err);
 			});
 		}
@@ -57,7 +58,7 @@ class Login extends Component {
 	render(){
 		return(
 			<div className='Login container col-5'>
-				<h1 id="loginMsg"> {this.state.message} </h1>
+				<h1 className="danger"> {this.state.message} </h1>
 				<h1>Log in</h1>
 				<form>
 					<Input

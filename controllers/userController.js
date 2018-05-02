@@ -1,4 +1,5 @@
 const db = require("../models");
+const bcrypt = require('bcryptjs');
 
 module.exports = {
   findAll: function(req, res) {
@@ -8,16 +9,6 @@ module.exports = {
       .then(dbuser => res.json(dbuser))
       .catch(err => res.status(422).json(err));
   },
-  // findByEmail: function(req, res) {
-  //   db.user      
-  //     .findOne({"email": req.params.email})
-  //     .then(dbuser => {
-  //       console.log(req.params.email);
-  //       res.json(dbuser);
-        
-  //     })
-  //     .catch(err => res.status(422).json(err));
-  // },
   findById: function(req, res) {
     db.user
       .findOne({"_id": req.params._id})
@@ -25,20 +16,26 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
-    const user = {
-      _id: req.body._id,
-      email: req.body.email,
-      name: req.body.name,
-      password: req.body.password,
-      bio: req.body.bio,
-      linkTo: req.body.linkTo,
-      relationship: req.body.relationship,
-      status: req.body.status
-    };
-    db.user
-      .create(user)
-      .then(dbuser => res.json(dbuser))
-      .catch(err => res.status(422).json(err));
+
+    bcrypt.genSalt(10, function(err, salt) {
+      bcrypt.hash(req.body.password, salt, function(err, hash) {
+          // Store hash in your password DB.
+          const user = {
+            _id: req.body._id,
+            email: req.body.email,
+            name: req.body.name,
+            password: hash,
+            bio: req.body.bio,
+            linkTo: req.body.linkTo,
+            relationship: req.body.relationship,
+            status: req.body.status
+          };
+          db.user
+            .create(user)
+            .then(dbuser => res.json(dbuser))
+            .catch(err => res.status(422).json(err));
+      });
+    });
   },
   update: function(req, res) {
     db.user
