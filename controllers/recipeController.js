@@ -15,6 +15,12 @@ module.exports = {
       .then(dbrecipe => res.json(dbrecipe))
       .catch(err => res.status(422).json(err));
   },
+  findByName: (req, res) => {
+    db.recipe
+      .findOne({"title": req.params.title})
+      .then(dbrecipe => res.json(dbrecipe))
+      .catch(err => res.status(422).json(err));
+  },
   create: (req, res) => {
     db.recipe
       .create(req.body)
