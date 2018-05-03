@@ -4,7 +4,7 @@ import { Input, FormBtn } from "../components/Form";
 
 class NewRecipe extends Component {
 	state = {
-    recipe: [],
+    // recipe: [],
     title: "",
     rating: 0,
     prep_time: "",

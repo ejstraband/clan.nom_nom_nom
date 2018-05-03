@@ -5,7 +5,7 @@ const recipeSchema = new Schema({
   title: { 
     type: String, 
     required: true 
-  },
+  }
   // rating: { 
   //   type: Number, 
   //   required: false, 
@@ -65,8 +65,9 @@ const recipeSchema = new Schema({
   // date: { 
   //   type: Date, 
   //   default: Date.now 
-  }
-}, { _id: true });
+//   }
+// }, { _id: true });
+});
 
 const Recipe = mongoose.model("Recipe", recipeSchema);
 
