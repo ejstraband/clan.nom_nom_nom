@@ -26,9 +26,10 @@ module.exports = {
           email: req.body.email,
           name: req.body.name,
           password: hash,
-          bio: req.body.bio,
           linkTo: req.body.linkTo,
           relationship: req.body.relationship,
+          bio: req.body.bio,
+          favorites: req.body.favorites,
           status: req.body.status
         };
         db.user

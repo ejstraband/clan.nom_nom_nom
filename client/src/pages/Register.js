@@ -16,6 +16,7 @@ class SignUp extends Component {
 		linkTo: "",
 		relationship: "",
 		bio: "",
+		favorites: [],
 		status: ""
 	};
 
@@ -88,13 +89,13 @@ class SignUp extends Component {
 				linkTo: this.state.linkTo,
 				relationship: this.state.relationship,
 				bio: this.state.bio,
+				favorites: this.state.favorites,
 				status: "active"
       };
       API.saveUser(user)
         .then(res => console.log(res))
 				.catch(err => console.log("Register.js says, User save " + err));
 			this.setState({
-				families: [],
 				family: "",
 				email: "",
 				name: "",
@@ -103,6 +104,7 @@ class SignUp extends Component {
 				linkTo: "",
 				relationship: "",
 				bio: "",
+				favorites: [],
 				status: ""
 		
 			});
