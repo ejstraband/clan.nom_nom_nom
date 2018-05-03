@@ -5,6 +5,8 @@ const mongoose = require('mongoose');
 const routes = require("./routes");
 const logger = require('morgan');
 const cors = require('cors');
+const bcrypt = require('bcryptjs');
+const expressValidator = require('express-validator');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -14,7 +16,7 @@ app.use(cors())
 app.use(logger('dev'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
+app.use(expressValidator());
 app.use(express.static('client/build'));
 
 // routes

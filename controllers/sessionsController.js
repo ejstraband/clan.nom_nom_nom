@@ -8,8 +8,7 @@ module.exports = {
     db.user      
       .findOne({"email": req.body.email})
       .then(dbuser => {
-        console.log(dbuser.password);
-        console.log(req.body.password);
+        // hash the password
         bcrypt.compare(req.body.password, dbuser.password, function(err, result) {
           // res === true
           if (result){
@@ -20,7 +19,7 @@ module.exports = {
             });                
           }
           else {
-            // We are assigning status code 299 = 'passwords do not match'
+            // We are assigning status code 299 = 'password does not match'
             res.send({
               status: 299,
               message: 'password mismatch'

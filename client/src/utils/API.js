@@ -43,8 +43,14 @@ const API = {
   // Saves a recipe to the database
   saveRecipe: function(recipeData) {
     return axios.post("/api/recipes", recipeData);
+  },
+  // FAMILIES
+  // save a new family
+  saveFamily: function(familyData) {
+    return axios.post("/api/families", familyData);
   }
 };
+
 
 // I just expose on the window object so I can play with it from the console
 window.api = API;
