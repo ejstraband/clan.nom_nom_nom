@@ -3,6 +3,9 @@ const Schema = mongoose.Schema;
 
 // User Schema
 const userSchema = new Schema({
+  family: {
+    type: String
+  },
   email: {
     type: String,
     index: true,

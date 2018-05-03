@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const familyController = require('../../controllers/familyController');
 
-// "/api/familys"
+// "/api/families"
 router.route('/')
   .get(familyController.findAll)
   .post(familyController.create);

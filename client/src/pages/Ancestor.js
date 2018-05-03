@@ -98,7 +98,6 @@ class Ancestor extends Component {
 						placeholder="Tell this person's story"
 					/>
 					<FormBtn
-						// disabled={!(this.state.name && this.state.linkTo && this.state.relationship)}
 						disabled={!(this.state.name && this.state.relationship)}
 						onClick={this.handleFormSubmit}
 					>
