@@ -28,8 +28,14 @@ class Login extends Component {
 			console.log("login submitted");
 			this.setState({message: ''})
 			// API.getUser(this.state.email)
-			// console.log(this.state);
-			API.loginUser(this.state)
+			console.log(this.state);
+			API.loginUser(
+				{
+					email: this.state.email.toLowerCase(),
+					password: this.state.password,
+					message: this.state.message,
+				}
+		)
 			.then(res => {
 				console.log("Login.js says, response from login is: ")
 				console.log(res.data.status);

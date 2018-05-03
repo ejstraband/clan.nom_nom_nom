@@ -11,10 +11,10 @@ class Ancestor extends Component {
 		linkTo: null,
 		relationship: "",
 		bio: "",
-		status: "ancestor",
+		status: "inactive",
 	};
 
-	componentDidMount() {
+	populateUsers() {
 		let theseUsers = [];
 		axios.get("/api/users")
 			.then(res => {
@@ -27,6 +27,10 @@ class Ancestor extends Component {
 				});
 				console.log(this.state.users)
 			});
+	}
+
+	componentDidMount() {
+		this.populateUsers()
 	};
 
   handleInputChange = event => {
@@ -39,26 +43,26 @@ class Ancestor extends Component {
   handleFormSubmit = event => {
 		event.preventDefault();
 
-    if (this.state.name && this.state.linkTo && this.state.relationship) {
+    if (this.state.name) {
 			const user = {
-        email: "an_ancestor@ancestry.nom",
+        email: this.state.name.replace(" ", "").toLowerCase() + "@ancestry.nom",
 				name: this.state.name,
-				password: "None1234",
+				password: "",
 				linkTo: this.state.linkTo,
 				relationship: this.state.relationship,
 				bio: this.state.bio,
-				status:	"ancestor",
+				status:	"inactive",
       };
       API.saveUser(user)
         .then(res => console.log(res))
 				.catch(err => console.log("Ancestor.js says, User save " + err));
+			this.populateUsers();	
 			this.setState({
-				user: [],
 				name: "",
 				linkTo: "",
 				relationship: "",
 				bio: "",
-				status: "ancestor",
+				status: "inactive",
 			});
     }
   };
@@ -87,9 +91,10 @@ class Ancestor extends Component {
 					<label>What is that member's relationship to this new ancestor?</label>
 					<select value={this.state.relationship} onChange={this.handleInputChange} name="relationship">
 						<option value=""></option>		
-						<option value="union">Marriage or similar</option>		
 						<option value="parent">Parent</option>		
-						<option value="other">Friend or other</option>			
+						<option value="union">Marriage or similar</option>		
+						<option value="other">Friend or other</option>	
+						<option value="none">none</option>	
 					</select>
 					<TextArea
 						value={this.state.bio}

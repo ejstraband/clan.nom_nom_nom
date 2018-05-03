@@ -82,7 +82,7 @@ class SignUp extends Component {
     if (this.state.email && this.state.name && (this.state.password === this.state.password2)) {
 			const user = {
 				family: this.state.family,
-        email: this.state.email,
+        email: this.state.email.toLowerCase().replace(" ", ""),
 				name: this.state.name,
 				password: this.state.password,
 				linkTo: this.state.linkTo,
