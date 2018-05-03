@@ -1,7 +1,6 @@
 import axios from "axios";
 
 const API = {
-  
   // USERS
 
   // SESSION
@@ -36,6 +35,9 @@ const API = {
   getRecipe: function(id) {
     return axios.get("/api/recipes/" + id);
   },
+  searchRecipes: function(searchText, by) {
+    return axios.get("/api/search?text=" + searchText + "&by=" + by); //TODO implement this
+  },
   // Deletes the recipe with the given id
   deleteRecipe: function(id) {
     return axios.delete("/api/recipes/" + id);
@@ -50,7 +52,6 @@ const API = {
     return axios.post("/api/families", familyData);
   }
 };
-
 
 // I just expose on the window object so I can play with it from the console
 window.api = API;

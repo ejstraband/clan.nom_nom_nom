@@ -1,12 +1,14 @@
 import React from "react";
 import "./SearchForm.css";
 
-// Using the datalist element we can create autofill suggestions based on the props.breeds array
+// Using the datalist element we can create autofill suggestions based on the props recipes array
 const SearchForm = props => (
   <form className="search">
     <div className="form-group">
-      <label htmlFor="recipe_search"></label>
+      <label htmlFor="recipe_search" />
       <input
+        type="text"
+        placeholder="Title"
         value={props.search}
         onChange={props.handleInputChange}
         name="recipe"
@@ -16,9 +18,9 @@ const SearchForm = props => (
         placeholder="Search for recipes"
         id="recipe_search"
       />
-      {/* <datalist id="breeds">
-        {props.breeds.map(breed => <option value={breed} key={breed} />)}
-      </datalist> */}
+      <datalist id="recipes">
+        {props.recipes.map(recipe => <option value={recipe} key={recipe} />)}
+      </datalist>
       <button
         type="submit"
         onClick={props.handleFormSubmit}
@@ -29,5 +31,4 @@ const SearchForm = props => (
     </div>
   </form>
 );
-
 export default SearchForm;
