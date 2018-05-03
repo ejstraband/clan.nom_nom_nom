@@ -39,12 +39,15 @@ module.exports = {
       // directions: req.body.directions,
       // notes: req.body.notes,
     };
-    console.log(newRecipe)
+    console.log('Your recipe object: ' + newRecipe)
     db.newRecipe
       // .create(req.body)
       console.log('and your answer is ' + newRecipe)
-      .create(newRecipe)
-      .then(dbNewRecipe => res.json(dbNewRecipe))
+      .create(newRecipe) //cannot "read" create property error found.
+      .then(dbNewRecipe =>{
+        console.log('just got past creation.');
+        res.json(dbNewRecipe)
+      })
       .catch(err => res.status(422).json(err));
   },
   update: (req, res) => {
