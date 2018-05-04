@@ -26,27 +26,26 @@ module.exports = {
     const newRecipe = {
       // _id: req.body._id,
       title: req.body.title,
-      // rating: req.body.rating,
-      // prep_time: req.body.prep_time,
-      // cook_time: req.body.cook_time,
-      // difficulty: req.body.difficulty,
-      // source: req.body.source,
-      // author: req.body.author,
-      // servings: req.body.servings,
-      // short_desc: req.body.short_desc,
-      // catetories: req.body.categories,
-      // ingredients: req.body.ingredients,
-      // directions: req.body.directions,
-      // notes: req.body.notes,
+      rating: req.body.rating,
+      prep_time: req.body.prep_time,
+      cook_time: req.body.cook_time,
+      difficulty: req.body.difficulty,
+      source: req.body.source,
+      author: req.body.author,
+      servings: req.body.servings,
+      short_desc: req.body.short_desc,
+      catetories: req.body.categories,
+      ingredients: req.body.ingredients,
+      directions: req.body.directions,
+      notes: req.body.notes,
     };
-    console.log('Your recipe object: ' + newRecipe)
-    db.newRecipe
+    console.log('Your recipe object: ' + newRecipe);
+    db.recipe
       // .create(req.body)
-      console.log('and your answer is ' + newRecipe)
       .create(newRecipe) //cannot "read" create property error found.
-      .then(dbNewRecipe =>{
+      .then(dbRecipe =>{
         console.log('just got past creation.');
-        res.json(dbNewRecipe)
+        res.json(dbRecipe)
       })
       .catch(err => res.status(422).json(err));
   },

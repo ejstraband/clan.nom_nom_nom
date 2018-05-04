@@ -7,13 +7,13 @@ class NewRecipe extends Component {
     // recipe: [],
     title: "",
     rating: 0,
-    prep_time: "",
-    cook_time: "",
+    prep_time: "", // Need control statement for # input.
+    cook_time: "", // Need control statement for # input.
     difficulty: "",
     source: "",
     author: "",
     poster: "",
-    servings: 0,
+    servings: 0, // this needs a control statement to insure that it's a #.
     short_desc: "",
     categories: [],
     ingredients: [],
