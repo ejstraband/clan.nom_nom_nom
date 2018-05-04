@@ -7,7 +7,7 @@ router.route('/')
   .post(familyController.create);
 //
 
-// "api/familys/:id"
+// "api/familiess/:id"
 router
   .route('/:_id')
   .get(familyController.findById)
