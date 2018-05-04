@@ -7,8 +7,6 @@ const SearchForm = props => (
     <div className="form-group">
       <label htmlFor="recipe_search" />
       <input
-        type="text"
-        placeholder="Title"
         value={props.search}
         onChange={props.handleInputChange}
         name="recipe"

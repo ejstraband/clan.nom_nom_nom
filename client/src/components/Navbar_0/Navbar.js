@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
-const Navbar = props => (
+const Navbar_0 = props => (
   <nav className="NavBar navbar navbar-expand-lg navbar-light bg-light">
     <Link className="navbar-brand" to="/">
       Ancestry.nom
@@ -21,7 +21,7 @@ const Navbar = props => (
           About
         </Link>
       </li>
-      <li
+      {/* <li
         className={
           window.location.pathname === "/newRecipe"
             ? "nav-item active"
@@ -53,11 +53,11 @@ const Navbar = props => (
         <Link to="/search" className="nav-link">
           Search
         </Link>
-      </li>
+      </li> */}
     </ul>
 
     <ul className="navbar-nav ml-auto">
-      <li
+      {/* <li
         className={
           window.location.pathname === "/ancestor"
             ? "nav-item active"
@@ -67,7 +67,7 @@ const Navbar = props => (
         <Link to="/ancestor" className="nav-link">
           Ancestor
         </Link>
-      </li>
+      </li> */}
       <li
         className={
           window.location.pathname === "/login" ? "nav-item active" : "nav-item"
@@ -92,4 +92,4 @@ const Navbar = props => (
   </nav>
 );
 
-export default Navbar;
+export default Navbar_0;

@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Hero from "../components/Hero";
 import Container from "../components/Container";
+import Navbar from "../components/Navbar_1";
 import Row from "../components/Row";
 import Col from "../components/Col";
 import RecipeList from "../components/RecipeList";
@@ -68,6 +69,7 @@ class Recipes extends React.Component {
   render() {
     return (
       <div>
+        <Navbar />
         <Hero backgroundImage="http://slatkisvijet.com/images/2016/09/savjeti-i-trikovi-za-pecenje-kolaca.jpeg">
           <h1>Ancestry*dot*Nom</h1>
           <h2>Where families meet to share recipes</h2>

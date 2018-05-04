@@ -12,7 +12,6 @@ const userSchema = new Schema({
   },
   name: { 
     type: String, 
-    required: true 
   },
   password: { 
     type: String, 
@@ -25,6 +24,9 @@ const userSchema = new Schema({
   },
   bio: {
     type: String
+  },
+  favorites: {
+    recipes: []
   },
   status: {
     type: String

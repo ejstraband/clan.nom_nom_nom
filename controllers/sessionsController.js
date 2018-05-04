@@ -9,8 +9,8 @@ module.exports = {
       .findOne({"email": req.body.email})
       .then(dbuser => {
         // hash the password
-        console.log(req.body.password);
-        console.log(dbuser.password);
+        // console.log(req.body.password);
+        // console.log(dbuser.password);
         bcrypt.compare(req.body.password, dbuser.password, function(err, result) {
           // res === true
           if (result){
@@ -32,9 +32,8 @@ module.exports = {
       .catch(err =>
         res.send({
           status: 422,
-          message: 'employee not found'
+          message: 'user not found'
         })
-        // res.status(422).json(err)
     );
   }
 };
