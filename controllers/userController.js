@@ -16,24 +16,25 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
-
+    // hash the password
     bcrypt.genSalt(10, function(err, salt) {
       bcrypt.hash(req.body.password, salt, function(err, hash) {
-          // Store hash in your password DB.
-          const user = {
-            _id: req.body._id,
-            email: req.body.email,
-            name: req.body.name,
-            password: hash,
-            bio: req.body.bio,
-            linkTo: req.body.linkTo,
-            relationship: req.body.relationship,
-            status: req.body.status
-          };
-          db.user
-            .create(user)
-            .then(dbuser => res.json(dbuser))
-            .catch(err => res.status(422).json(err));
+        // Store hash in your password DB.
+        const user = {
+          _id: req.body._id,
+          family: req.body.family,
+          email: req.body.email,
+          name: req.body.name,
+          password: hash,
+          bio: req.body.bio,
+          linkTo: req.body.linkTo,
+          relationship: req.body.relationship,
+          status: req.body.status
+        };
+        db.user
+          .create(user)
+          .then(dbuser => res.json(dbuser))
+          .catch(err => res.status(422).json(err));
       });
     });
   },

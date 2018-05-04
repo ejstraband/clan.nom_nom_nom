@@ -3,8 +3,8 @@ import API from "../utils/API";
 import { Input, FormBtn } from "../components/Form";
 
 class NewRecipe extends Component {
-	state = {
-    // recipe: [],
+  state = {
+    recipe: [],
     title: "",
     rating: 0,
     prep_time: "", // Need control statement for # input.
@@ -18,11 +18,11 @@ class NewRecipe extends Component {
     categories: [],
     ingredients: [],
     directions: [],
-    notes: [],    
-	};
+    notes: []
+  };
 
-	componentDidMount() {
-		console.log("Component did mount")
+  componentDidMount() {
+    console.log("Component did mount");
   }
 
   handleInputChange = event => {
@@ -34,6 +34,7 @@ class NewRecipe extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
+
     if (this.state.title && this.state.categories && this.state.ingredients && this.state.directions && this.state.notes) {
 	  const newRecipe = {
 		title: this.state.title,
@@ -43,7 +44,7 @@ class NewRecipe extends Component {
         difficulty: this.state.difficulty,
         source: this.state.source,
         author: this.state.author,
-        poster: this.state.poster,
+        poster: this.state.poster || "unknown",
         servings: this.state.servings || 0,
         short_desc: this.state.short_desc,
         categories: this.state.categories,
@@ -75,7 +76,7 @@ class NewRecipe extends Component {
     }
   };
 
-	render(){
+	render() {
 		return (
 			<div className='container col-10 col-md-6'>
 				<h1>Create a Recipe</h1>

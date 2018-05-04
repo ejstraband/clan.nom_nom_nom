@@ -1,7 +1,6 @@
 import axios from "axios";
 
 const API = {
-  
   // USERS
 
   // SESSION
@@ -36,6 +35,9 @@ const API = {
   getRecipe: function(id) {
     return axios.get("/api/recipes/" + id);
   },
+  searchRecipes: function(searchText, by) {
+    return axios.get("/api/search?text=" + searchText + "&by=" + by); //TODO implement this
+  },
   // Deletes the recipe with the given id
   deleteRecipe: function(id) {
     return axios.delete("/api/recipes/" + id);
@@ -44,6 +46,11 @@ const API = {
   saveRecipe: function(recipeData) {
     console.log("New Recipe data is: ", recipeData);
     return axios.post("/api/recipes", recipeData);
+  },
+  // FAMILIES
+  // save a new family
+  saveFamily: function(familyData) {
+    return axios.post("/api/families", familyData);
   }
 };
 

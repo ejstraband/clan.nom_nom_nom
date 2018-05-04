@@ -1,13 +1,13 @@
 const router = require('express').Router();
 const familyController = require('../../controllers/familyController');
 
-// "/api/familys"
+// "/api/families"
 router.route('/')
   .get(familyController.findAll)
   .post(familyController.create);
 //
 
-// "api/familys/:id"
+// "api/familiess/:id"
 router
   .route('/:_id')
   .get(familyController.findById)

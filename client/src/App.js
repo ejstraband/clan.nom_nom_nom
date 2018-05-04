@@ -7,6 +7,7 @@ import Ancestor from "./pages/Ancestor";
 import Login from "./pages/Login";
 import SignUp from "./pages/Register";
 import NewRecipe from "./pages/NewRecipe";
+import NewFamily from "./pages/NewFamily";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Wrapper from "./components/Wrapper";
@@ -24,6 +25,7 @@ const App = () => (
         <Route exact path="/ancestor" component={Ancestor} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/signup" component={SignUp} />
+        <Route exact path="/family" component={NewFamily} />
       </Wrapper>
       <Footer />
     </div>

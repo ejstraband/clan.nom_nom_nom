@@ -12,15 +12,13 @@
     "react-scripts": "1.1.4"
   },
   "scripts": {
-    "start": "cross-env REACT_APP_API_URL=http://localhost:3001 react-scripts start",
-    "build": "cross-env REACT_APP_API_URL=http://localhost:3001 react-scripts",
+    "start": "react-scripts start",
+    "build": "react-scripts",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
   "main": "index.js",
   "license": "MIT",
   "proxy": "http://localhost:3001/",
-  "devDependencies": {
-    "cross-env": "^5.1.4"
-  }
+  "devDependencies": {}
 }

@@ -1,0 +1,17 @@
+.Search__box {
+  background: rgba(0, 0, 0, 0.5);
+
+  padding: 30px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.Search__box label {
+  color: white;
+}
+
+.Search__box input {
+  max-width: 300px;
+  margin-bottom: 20px;
+}
