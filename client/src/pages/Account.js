@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import API from "../utils/API";
-import Navbar from "../components/Navbar_0";
+import Navbar from "../components/Navbar_1";
 import { Input, FormBtn, TextArea } from "../components/Form";
 import { Link } from "react-router-dom";
 import axios from 'axios';
@@ -55,29 +55,6 @@ class SignUp extends Component {
       [name]: value
     });
 	};
-	
-	// handleInputChange2 = event => {
-  //   const { name, value } = event.target;
-  //   this.setState({
-  //     [name]: value
-	// 	});
-
-	// 	let theseUsers = [];
-	// 	axios.get("/api/users")
-	// 		.then(res => {
-	// 			theseUsers = res.data.map((user) => {
-	// 				if (user.family === this.state.family) {
-	// 					return user
-	// 				}
-	// 			});
-	// 			console.log(theseUsers);
-	// 			this.setState({
-	// 				users: theseUsers,
-	// 			});
-	// 			console.log(this.state.users)
-	// 		});
-
-  // };
 
   handleFormSubmit = event => {
 		event.preventDefault();
@@ -109,7 +86,7 @@ class SignUp extends Component {
 				status: ""
 		
 			});
-			this.props.history.push("/login");
+			this.props.history.push("/recipes");
     }
   };
 
@@ -128,22 +105,16 @@ class SignUp extends Component {
 			<div>
 				<Navbar />
 				<div className='container col-6'>
-					<h1>Create an account</h1>
+					<h1>Edit your account</h1>
 					<form>
-						<h6>Which family group do you want to join?</h6>
+						<label>Family group</label>
 						<select value={this.state.family} onChange={this.handleInputChange} name="family">	
 							<option value="" ></option>
 							{optionFamily}
 						</select>
 						<Link to="/family" className="nav-link">
-							<h5>New Family</h5>
+							New Family
 						</Link>
-						<Input
-							value={this.state.email}
-							onChange={this.handleInputChange}
-							name="email"
-							placeholder="Email (required)"
-						/>
 						<Input
 							value={this.state.name}
 							onChange={this.handleInputChange}
@@ -164,12 +135,12 @@ class SignUp extends Component {
 							name="password2"
 							placeholder="Repeat password"
 						/>
-						<h6>Pick a family member who is your parent, spouse or friend.</h6>
+						<label>Pick a family member who is your parent, spouse or friend.</label>
 						<select value={this.state.linkTo} onChange={this.handleInputChange} name="linkTo">	
 							<option value="" ></option>
 							{optionUsers}
 						</select>
-						<h6>How are you related to that family member?</h6>
+						<label>How are you related to that family member?</label>
 						<select value={this.state.relationship} onChange={this.handleInputChange} name="relationship">
 							<option value=""></option>		
 							<option value="union">Marriage or similar</option>		

@@ -16,6 +16,7 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
+    console.log(req.body);
     // hash the password
     bcrypt.genSalt(10, function(err, salt) {
       bcrypt.hash(req.body.password, salt, function(err, hash) {

@@ -1,6 +1,6 @@
 import React from "react";
 import { Parallax } from 'react-parallax';
-import Navbar from "../components/Navbar_0";
+import Navbar from "../components/Navbar_1";
 
 const styles = {
   fontFamily: 'Roboto, sans-serif',

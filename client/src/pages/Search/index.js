@@ -2,9 +2,9 @@ import React, { cloneElement } from "react";
 // import Container from "../components/Container";
 import Hero from "../../components/Hero";
 import API from "../../utils/API";
-import SearchForm from "../../components/SearchForm";
-import SearchResults from "../../components/SearchResults";
-import Alert from "../../components/Alert";
+// import SearchForm from "../../components/SearchForm";
+// import SearchResults from "../../components/SearchResults";
+// import Alert from "../../components/Alert";
 
 import searchIcon from "./searchIcon";
 import "./index.css";
@@ -20,7 +20,7 @@ class Search extends React.Component {
     searchBy: "author"
   };
 
-  // // When the component mounts, get a list of all available search resipe and update this.state.
+  // // When the component mounts, get a list of all available search recipe and update this.state.
   componentDidMount() {
     API.getRecipes()
       .then(res => this.setState({ author: res.data.message }))
@@ -43,13 +43,13 @@ class Search extends React.Component {
       })
       .catch(err => this.setState({ error: err.message }));
   };*/
-  componentDidMount() {
-    API.getRecipes().then(res =>
-      this.setState({
-        results: res.data // TODO check the shape of the result
-      })
-    );
-  }
+  // componentDidMount() {
+  //   API.getRecipes().then(res =>
+  //     this.setState({
+  //       results: res.data // TODO check the shape of the result
+  //     })
+  //   );
+  // }
   onSubmit = event => {
     event.preventDefault();
 

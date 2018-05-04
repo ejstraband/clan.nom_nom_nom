@@ -23,8 +23,12 @@ const API = {
   },
   // Saves a user to the database
   saveUser: function(userData) {
-    console.log("user data is: ", userData);
     return axios.post("/api/users", userData);
+  },
+  // Saves a user to the database
+  updateUser: function(userData) {
+    console.log("user data is: ", userData);
+    return axios.post("/api/users/:id", userData);
   },
   // RECIPES
   // Gets all recipes
