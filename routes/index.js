@@ -3,6 +3,7 @@ const router = require("express").Router();
 const apiRoutes = require("./api");
 
 // API Routes
+console.log('Look you\'ve hit me!');
 router.use(apiRoutes);
 
 // If no API routes are hit, send the React app
