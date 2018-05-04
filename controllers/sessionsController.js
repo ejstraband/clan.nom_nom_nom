@@ -14,10 +14,12 @@ module.exports = {
         bcrypt.compare(req.body.password, dbuser.password, function(err, result) {
           // res === true
           if (result){
+            console.log(result);
             // passwords match
             res.send({
               status: 200,
-              message: 'success'
+              message: 'success',
+              family: dbuser.family
             });                
           }
           else {
