@@ -68,12 +68,12 @@ const recipeSchema = new Schema({
       date: { type: Date }
     }
   },
-  // date: { 
-  //   type: Date, 
-  //   default: Date.now 
-  // }
-// }, { _id: true });
-});
+  date: { 
+    type: Date, 
+    default: Date.now 
+  }
+}, { _id: true });
+
 
 const Recipe = mongoose.model("Recipe", recipeSchema);
 
