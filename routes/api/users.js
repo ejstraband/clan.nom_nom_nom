@@ -5,6 +5,7 @@ const userController = require("../../controllers/userController");
 router.route("/")
   .post(userController.create)
   .get(userController.findAll);
+// 
 
 // Matches with "/api/users/:id"
 router
@@ -12,7 +13,6 @@ router
   .get(userController.findById)
   .put(userController.update)
   .delete(userController.remove);
-
-
+//
 
 module.exports = router;
