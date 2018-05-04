@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import API from "../utils/API";
+import Navbar from "../components/Navbar_0";
 import { Input, FormBtn } from "../components/Form";
 import '../index.css'
 
@@ -38,9 +39,10 @@ class Login extends Component {
 		)
 			.then(res => {
 				console.log("Login.js says, response from login is: ")
-				console.log(res.data.status);
+				console.log(res);
 				if (res.data.status === 200){
 					// success - email and password are valid
+					localStorage.setItem("family", res.data.family);
 					this.setState({message: 'Success!'});
 					this.props.history.push("/recipes");
 				} else if (res.data.status === 299) {
@@ -63,31 +65,34 @@ class Login extends Component {
 	
 	render(){
 		return(
-			<div className='Login container col-5'>
-				<h1 className="danger"> {this.state.message} </h1>
-				<h1>Log in</h1>
-				<form>
-					<Input
-						type="email"
-						value={this.state.email}
-						onChange={this.handleInputChange}
-						name="email"
-						placeholder="Email"
-					/>
-					<Input
-						type="password"
-						value={this.state.password}
-						onChange={this.handleInputChange}
-						name="password"
-						placeholder="Password"
-					/>
-					<FormBtn
-						disabled={!(this.state.email && this.state.password)}
-						onClick={this.handleFormSubmit}
-					>
-						Log in
-					</FormBtn>
-				</form>
+			<div>
+				<Navbar />
+				<div className='Login container col-5'>
+					<h1 className="danger"> {this.state.message} </h1>
+					<h1>Log in</h1>
+					<form>
+						<Input
+							type="email"
+							value={this.state.email}
+							onChange={this.handleInputChange}
+							name="email"
+							placeholder="Email"
+						/>
+						<Input
+							type="password"
+							value={this.state.password}
+							onChange={this.handleInputChange}
+							name="password"
+							placeholder="Password"
+						/>
+						<FormBtn
+							disabled={!(this.state.email && this.state.password)}
+							onClick={this.handleFormSubmit}
+						>
+							Log in
+						</FormBtn>
+					</form>
+				</div>
 			</div>
 		)
 	}

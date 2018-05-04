@@ -16,6 +16,7 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
+    console.log(req.body);
     // hash the password
     bcrypt.genSalt(10, function(err, salt) {
       bcrypt.hash(req.body.password, salt, function(err, hash) {
@@ -26,9 +27,10 @@ module.exports = {
           email: req.body.email,
           name: req.body.name,
           password: hash,
-          bio: req.body.bio,
           linkTo: req.body.linkTo,
           relationship: req.body.relationship,
+          bio: req.body.bio,
+          favorites: req.body.favorites,
           status: req.body.status
         };
         db.user

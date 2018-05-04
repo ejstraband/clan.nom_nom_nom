@@ -2,23 +2,25 @@ import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Recipes from "./pages/Recipes";
 import About from "./pages/About";
+import About_1 from "./pages/About_1";
 import Search from "./pages/Search";
 import Ancestor from "./pages/Ancestor";
 import Login from "./pages/Login";
 import SignUp from "./pages/Register";
 import NewRecipe from "./pages/NewRecipe";
 import NewFamily from "./pages/NewFamily";
-import Navbar from "./components/Navbar";
+// import Navbar from "./components/Navbar_0";
 import Footer from "./components/Footer";
 import Wrapper from "./components/Wrapper";
 
 const App = () => (
   <Router>
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <Wrapper>
         <Route exact path="/" component={About} />
         <Route exact path="/about" component={About} />
+        <Route exact path="/about_1" component={About_1} />
         <Route exact path="/recipes" component={Recipes} />
         <Route exact path="/newRecipe" component={NewRecipe} />
         <Route exact path="/search" component={Search} />

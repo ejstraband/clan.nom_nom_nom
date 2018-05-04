@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import API from "../utils/API";
+import Navbar from "../components/Navbar_1";
 import { Input, FormBtn, TextArea } from "../components/Form";
 import axios from 'axios';
 
@@ -45,6 +46,7 @@ class Ancestor extends Component {
 
     if (this.state.name) {
 			const user = {
+				family: localStorage.getItem("family"),
         email: this.state.name.replace(" ", "").toLowerCase() + "@ancestry.nom",
 				name: this.state.name,
 				password: "",
@@ -74,42 +76,45 @@ class Ancestor extends Component {
 		);
 
 		return (
-			<div className='container col-6'>
-				<h1>Add an Ancestor</h1>
-				<form>
-					<Input
-						value={this.state.name}
-						onChange={this.handleInputChange}
-						name="name"
-						placeholder="Full Name (required)"
-					/>
-					<label>Who is this ancestor related to?</label>
-					<select value={this.state.linkTo} onChange={this.handleInputChange} name="linkTo">	
-						<option value="" ></option>
-						{optionUsers}
-					</select>
-					<label>What is that member's relationship to this new ancestor?</label>
-					<select value={this.state.relationship} onChange={this.handleInputChange} name="relationship">
-						<option value=""></option>		
-						<option value="parent">Parent</option>		
-						<option value="union">Marriage or similar</option>		
-						<option value="other">Friend or other</option>	
-						<option value="none">none</option>	
-					</select>
-					<TextArea
-						value={this.state.bio}
-						onChange={this.handleInputChange}
-						name="bio"
-						placeholder="Tell this person's story"
-					/>
-					<FormBtn
-						disabled={!(this.state.name && this.state.relationship)}
-						onClick={this.handleFormSubmit}
-					>
-						Add Ancestor
-					</FormBtn>
-				</form>
-			</div>
+			<div>
+				<Navbar />
+				<div className='container col-6'>
+					<h1>Add an Ancestor</h1>
+					<form>
+						<Input
+							value={this.state.name}
+							onChange={this.handleInputChange}
+							name="name"
+							placeholder="Full Name (required)"
+						/>
+						<label>Who is this ancestor related to?</label>
+						<select value={this.state.linkTo} onChange={this.handleInputChange} name="linkTo">	
+							<option value="" ></option>
+							{optionUsers}
+						</select>
+						<label>What is that member's relationship to this new ancestor?</label>
+						<select value={this.state.relationship} onChange={this.handleInputChange} name="relationship">
+							<option value=""></option>		
+							<option value="parent">Parent</option>		
+							<option value="union">Marriage or similar</option>		
+							<option value="other">Friend or other</option>	
+							<option value="none">none</option>	
+						</select>
+						<TextArea
+							value={this.state.bio}
+							onChange={this.handleInputChange}
+							name="bio"
+							placeholder="Tell this person's story"
+						/>
+						<FormBtn
+							disabled={!(this.state.name && this.state.relationship)}
+							onClick={this.handleFormSubmit}
+						>
+							Add Ancestor
+						</FormBtn>
+					</form>
+				</div>
+			</div>	
 		)
 	}
 }
