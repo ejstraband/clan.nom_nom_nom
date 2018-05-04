@@ -87,16 +87,9 @@ const Navbar = props => (
           Register
         </Link>
       </li> */}
-            <li
-        className={
-          window.location.pathname === "/logout"
-            ? "nav-item active"
-            : "nav-item"
-        }
-      >
       <li
         className={
-          window.location.pathname === "/about"
+          window.location.pathname === "/logout"
             ? "nav-item active"
             : "nav-item"
         }
@@ -105,7 +98,7 @@ const Navbar = props => (
           logout
         </Link>
       </li>
-      </li>
+
     </ul>
   </nav>
 );

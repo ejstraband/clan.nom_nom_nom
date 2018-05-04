@@ -39,9 +39,10 @@ class Login extends Component {
 		)
 			.then(res => {
 				console.log("Login.js says, response from login is: ")
-				console.log(res.data.status);
+				console.log(res);
 				if (res.data.status === 200){
 					// success - email and password are valid
+					localStorage.setItem("family", res.data.family);
 					this.setState({message: 'Success!'});
 					this.props.history.push("/recipes");
 				} else if (res.data.status === 299) {
