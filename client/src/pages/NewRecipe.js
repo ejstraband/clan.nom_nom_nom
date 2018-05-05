@@ -38,20 +38,21 @@ class NewRecipe extends Component {
 
     if (this.state.title && this.state.categories && this.state.ingredients && this.state.directions && this.state.notes) {
 	  const newRecipe = {
-		title: this.state.title,
-        rating: 0,
-        prep_time: this.state.prep_time,
-        cook_time: this.state.cook_time,
-        difficulty: this.state.difficulty,
-        source: this.state.source,
-        author: this.state.author,
-        poster: this.state.poster || "unknown",
-        servings: this.state.servings || 0,
-        short_desc: this.state.short_desc,
-        categories: this.state.categories,
-        ingredients: this.state.ingredients,
-        directions: this.state.directions,
-        notes: this.state.notes, 
+      family: localStorage.getItem("family"),
+      title: this.state.title,
+      rating: 0,
+      prep_time: this.state.prep_time,
+      cook_time: this.state.cook_time,
+      difficulty: this.state.difficulty,
+      source: this.state.source,
+      author: this.state.author,
+      poster: this.state.poster || "unknown",
+      servings: this.state.servings || 0,
+      short_desc: this.state.short_desc,
+      categories: this.state.categories,
+      ingredients: this.state.ingredients,
+      directions: this.state.directions,
+      notes: this.state.notes, 
 	  };
 	  	API.saveRecipe(newRecipe)
         	.then(res => {
