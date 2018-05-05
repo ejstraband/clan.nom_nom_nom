@@ -3,14 +3,10 @@ const bcrypt = require('bcryptjs');
 
 module.exports = {
   new: function(req, res) {
-    console.log('sessionsController')
-    console.log(req.body);
     db.user      
       .findOne({"email": req.body.email})
       .then(dbuser => {
         // hash the password
-        // console.log(req.body.password);
-        // console.log(dbuser.password);
         bcrypt.compare(req.body.password, dbuser.password, function(err, result) {
           // res === true
           if (result){

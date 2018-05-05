@@ -2,6 +2,9 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const recipeSchema = new Schema({
+  family: {
+    type: String
+  },
   title: { 
     type: String, 
     required: true 
@@ -54,13 +57,16 @@ const recipeSchema = new Schema({
     measure: {type: String},
     item: {type: String},  
   },
-   directions: {
-    direction: { 
-      note: { 
-        type: String 
-      } 
-     }
-   },
+  directions: {
+  direction: { 
+    note: { 
+      type: String 
+    } 
+    }
+  },
+  story: {
+    type: String
+  },
   notes: {
     note: {
       author: { type: String },
@@ -68,6 +74,7 @@ const recipeSchema = new Schema({
       date: { type: Date }
     }
   },
+  image: "",
   date: { 
     type: Date, 
     default: Date.now 
