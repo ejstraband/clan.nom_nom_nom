@@ -7,6 +7,7 @@ class NewFamily extends Component {
 	state = {
 		families: [],
 		familyName: "",
+		users: [],
 	};
 
 	// add 'that name is already taken' functionality	
@@ -46,7 +47,23 @@ class NewFamily extends Component {
 			});
 			this.props.history.push("/register");
     }
-  };
+	};
+	
+	getUserArray = () => {
+		let userArray = [];
+		axios.get('/signup')
+			.then(response => {
+				userArray = response.data.map(user => {
+					return user;
+				});
+				console.log(response);
+			})
+		return userArray;
+	}
+
+	filterUsersByFamilyId = (famId, userArray) => {
+		userArray.filter(user => {return user.family_id === famId});
+	};
 
 	render(){
 		// let families = this.state.families;

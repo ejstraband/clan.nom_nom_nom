@@ -13,6 +13,10 @@ const API = {
   getUsers: function() {
     return axios.get("/api/users");
   },
+  // 
+  getUserArray: function() {
+    return axios.get("/signup");
+  },
   // Gets the user with the given id
   getUser: function(id) {
     return axios.get("/api/users/" + id);
