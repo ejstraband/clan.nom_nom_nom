@@ -174,16 +174,21 @@ class NewRecipe extends Component {
 				</div>
 				<div className='row'>
 					<div className='col-10 col-md-6'>
-						Summary:
-						<textarea
-							value={this.state.short_desc}
-							onChange={this.handleInputChange}
-							name="short_desc"
-							rows='4'
-							cols='50'
-							placeholder="Short description"
-							title="Please supply a short 1-2 paragraph description of this recipe."
-						/>
+						<div className='form-group'>
+							<label 
+							for='summary'>
+							Summary:
+							</label>
+							<textarea
+								value={this.state.short_desc}
+								onChange={this.handleInputChange}
+								name="short_desc"
+								rows='4'
+								cols='50'
+								placeholder="Short description"
+								title="Please supply a short 1-2 paragraph description of this recipe."
+							/>
+						</div>
 					</div>
 				</div>
 				<div className='row'>
@@ -201,7 +206,18 @@ class NewRecipe extends Component {
 					</div>
 				</div>
 				<div className='row'>
-					ingredients section
+					<div class="form-group">
+						<label 
+							for="ingredients">
+							Ingredients:
+						</label>
+						<textarea 
+							className="form-control" 
+							id="exampleTextarea" 
+							rows="4"
+							cols='50'
+						/>
+    				</div>
 				</div>
 				<div className='row'>
 					
