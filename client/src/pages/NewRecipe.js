@@ -206,6 +206,27 @@ class NewRecipe extends Component {
                   //this will later be changed to a dropdown
                 />
               </div>
+              <div>
+                <label
+                  className="col-form-label col-form-label-sm" 
+                  for="inputSmall">
+                  Difficulty:
+                </label>
+                <Input
+                  value={this.state.difficulty}
+                  onChange={this.handleInputChange}
+                  className="form-control form-control-sm"
+                  name="difficulty"
+                  type="number" //control method to handle insuring only #'s are entered.
+                  min="0"
+                  step="1"
+                  inputmode="numeric"
+                  placeholder="select difficulty"
+                  title="Please enter the difficulty of this recipe"
+                  tabindex="7"
+                  //this will later be changed to a dropdown
+                />
+              </div>
             </div>
             <div className='col-6'>
               <div className='row'> 
@@ -215,15 +236,16 @@ class NewRecipe extends Component {
               </div>
               <div className='row'>
                 <div className='col-md-4 col-sm-12'>
-                  <button type="button" class="btn btn-secondary" tabindex="10">Choose Image</button>
+                  <button type="button" class="btn btn-secondary" tabindex="11">Choose Image</button>
                 </div>
                 <div className='col-md-4 col-sm-12'>
-                  <button type="button" class="btn btn-dark" tabindex="11">Upload Image</button>
+                  <button type="button" class="btn btn-dark" tabindex="12">Upload Image</button>
                 </div>
               </div>
             </div>
           </Row>
         </div>
+        <h2 className='text-center'> Recipe Support & Instructional Information </h2>
         <div className='section mt-0'>
           <div className='row'>
             <div className="col-12 col-md-12 form-group">
@@ -235,12 +257,12 @@ class NewRecipe extends Component {
                 // value={this.state.short_desc} //not sure why value={this.state.short_desc} is preventing any text.
                 value={this.state.short_descx}
                 onChange={this.handleInputChange}
-                className="form-control" 
+                className="form-control noresize" 
                 id="short_descTxtA" 
                 rows="9"
                 cols='50'
                 title="Plase enter a short description of this recipe."
-                tabindex="7"
+                tabindex="8"
                 placeholder='What is the description of this recipe?'
               />
               </div>
@@ -253,12 +275,12 @@ class NewRecipe extends Component {
               </label>
               <textarea 
                 onChange={this.handleInputChange} //not sure why value={this.state.story} is preventing any text.
-                className="form-control" 
+                className="form-control noresize" 
                 id="short_descTxtA" 
                 rows="9"
                 cols='50'
                 title='Please supply the story surrounding this recipe.'
-                tabindex="8"
+                tabindex="9"
                 placeholder='What is your story?'
               />
             </div>
@@ -271,18 +293,19 @@ class NewRecipe extends Component {
               </label>
               <textarea 
                 onChange={this.handleInputChange} //not sure why value={this.state.story} is preventing any text.
-                className="form-control" 
+                className="form-control noresize" 
                 id="short_descTxtA" 
                 rows="9"
                 cols='50'
                 title='Please write out the directions to create your recipe.'
-                tabindex="9"
+                tabindex="10"
                 placeholder='List out the direction steps to create this recipe'
               />
               </div>
           </div>
           <div>
         </div>
+        <div className='submitBtnLocation' tabindex='13'>
           <FormBtn
             
 						disabled={!(this.state.title && this.state.categories && this.state.ingredients && this.state.directions && this.state.notes)}
@@ -290,6 +313,7 @@ class NewRecipe extends Component {
 					>
 						Submit
 					</FormBtn>
+        </div>
         </div>
 			</div>
 		</div> 

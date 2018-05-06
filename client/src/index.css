@@ -60,3 +60,6 @@ ul {
 .danger {
   color: red;
 }
+.noresize{
+  resize: none;
+}
