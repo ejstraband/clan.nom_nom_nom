@@ -15,6 +15,12 @@ module.exports = {
       .then(dbUser => res.json(dbUser))
       .catch(err => res.status(422).json(err));
   },
+  findByName: function(req, res) {
+    db.user
+      .findOne({"name": req.params.name})
+      .then(dbuser => res.json(dbuser))
+      .catch(err => res.status(422).json(err));
+  },
   create: function(req, res) {
     console.log(req.body);
     // hash the password
