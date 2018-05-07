@@ -36,7 +36,9 @@ module.exports = {
       short_desc: req.body.short_desc,
       catetories: req.body.categories,
       ingredients: req.body.ingredients,
-      directions: req.body.directions,
+      story: req.body.story,
+      poster: req.body.poster,
+      instructions: req.body.instructions,
       notes: req.body.notes,
     };
     console.log('Your recipe object: ' + newRecipe);

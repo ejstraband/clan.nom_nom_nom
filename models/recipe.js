@@ -53,19 +53,16 @@ const recipeSchema = new Schema({
     required: false 
   },
   ingredients: {
-    quantity: {type: Number},
-    measure: {type: String},
-    item: {type: String},  
+    type: String,
+    required: false
   },
-  directions: {
-  direction: { 
-    note: { 
-      type: String 
-    } 
-    }
+  instructions: {
+    type: String,
+    required: false
   },
   story: {
-    type: String
+    type: String,
+    required: false
   },
   notes: {
     note: {

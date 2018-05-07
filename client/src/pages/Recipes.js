@@ -81,7 +81,7 @@ class Recipes extends React.Component {
               item: "mozzarella cheese, grated"
             }
           ],
-          directions: "1 Melt butter in medium saucepan with olive oil over medium/low heat.  2 Add the garlic, cream, white pepper and bring mixture to a simmer.  3 Stir often.  4 Add the Parmesan cheese and simmer sauce for 8-10 minutes or until sauce has thickened and is smooth.  5 When sauce has thickened add the Mozzarella cheese and stir until smooth. STIR FREQUENTLY.  6 While the sauce cooks, boil noodles for 3-5 minutes.",
+          instructions: "1 Melt butter in medium saucepan with olive oil over medium/low heat.  2 Add the garlic, cream, white pepper and bring mixture to a simmer.  3 Stir often.  4 Add the Parmesan cheese and simmer sauce for 8-10 minutes or until sauce has thickened and is smooth.  5 When sauce has thickened add the Mozzarella cheese and stir until smooth. STIR FREQUENTLY.  6 While the sauce cooks, boil noodles for 3-5 minutes.",
           notes: [{note: "This recipe was given to me by my niece Alissa."}],
           image: "https://www.bunsinmyoven.com/wp-content/uploads/2018/03/authentic-alfredo-sauce.jpg",
         },
