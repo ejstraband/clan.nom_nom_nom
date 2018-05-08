@@ -26,9 +26,9 @@ const API = {
     return axios.post("/api/users", userData);
   },
   // Saves a user to the database
-  updateUser: function(userData) {
-    console.log("user data is: ", userData);
-    return axios.post("/api/users/:id", userData);
+  updateUser: function(id, userData) {
+    // console.log("User id is ", id, "user data is: ", userData);
+    return axios.put("/api/users/:id", id, userData);
   },
   // RECIPES
   // Gets all recipes

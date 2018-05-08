@@ -6,6 +6,7 @@ module.exports = {
     db.user      
       .findOne({"email": req.body.email})
       .then(dbuser => {
+        // console.log("dbuser is ", dbuser);
         // hash the password
         bcrypt.compare(req.body.password, dbuser.password, function(err, result) {
           // res === true
@@ -15,7 +16,9 @@ module.exports = {
             res.send({
               status: 200,
               message: 'success',
-              family: dbuser.family
+              family: dbuser.family,
+              id: dbuser._id,
+              favorites: dbuser.favorites,
             });                
           }
           else {

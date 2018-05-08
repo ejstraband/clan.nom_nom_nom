@@ -33,20 +33,7 @@ class SignUp extends Component {
 					families: theseFamilies,
 				});
 				console.log(this.state.families)
-			});
-
-		let theseUsers = [];
-		axios.get("/api/users")
-			.then(res => {
-				theseUsers = res.data.map((user) => {
-					return user
-				});
-				console.log(theseUsers);
-				this.setState({
-					users: theseUsers,
-				});
-				console.log(this.state.users)
-			});
+		});
 	};
 
   handleInputChange = event => {
@@ -55,29 +42,6 @@ class SignUp extends Component {
       [name]: value
     });
 	};
-	
-	// handleInputChange2 = event => {
-  //   const { name, value } = event.target;
-  //   this.setState({
-  //     [name]: value
-	// 	});
-
-	// 	let theseUsers = [];
-	// 	axios.get("/api/users")
-	// 		.then(res => {
-	// 			theseUsers = res.data.map((user) => {
-	// 				if (user.family === this.state.family) {
-	// 					return user
-	// 				}
-	// 			});
-	// 			console.log(theseUsers);
-	// 			this.setState({
-	// 				users: theseUsers,
-	// 			});
-	// 			console.log(this.state.users)
-	// 		});
-
-  // };
 
   handleFormSubmit = event => {
 		event.preventDefault();
