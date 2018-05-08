@@ -43,6 +43,8 @@ class Login extends Component {
 				if (res.data.status === 200){
 					// success - email and password are valid
 					localStorage.setItem("family", res.data.family);
+					localStorage.setItem("user", res.data.id);
+					localStorage.setItem("favorites", res.data.favorites || []);
 					this.setState({message: 'Success!'});
 					this.props.history.push("/recipes");
 				} else if (res.data.status === 299) {

@@ -25,9 +25,7 @@ const userSchema = new Schema({
   bio: {
     type: String
   },
-  favorites: {
-    recipes: []
-  },
+  favorites: [],
   status: {
     type: String
   },

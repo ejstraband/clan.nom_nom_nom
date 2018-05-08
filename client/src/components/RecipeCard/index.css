@@ -35,9 +35,6 @@
   vertical-align: middle;
 }
 
-.RecipeCard__description {
-}
-
 .RecipeCard__buttons {
   display: flex;
   flex-flow: row;
@@ -48,4 +45,17 @@
   margin-top: 20px;
   border-top: 1px solid gray;
   padding: 10px 0px;
+}
+
+.thumbsUp {
+  height: 60px;
+  width: 60px;
+  padding: 10px;
+  margin-right: 10px;
+  /* border: solid; */
+  background: url(thumbs_up.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  background-color: lightgray;
 }
