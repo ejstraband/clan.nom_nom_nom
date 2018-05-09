@@ -40,7 +40,7 @@ const recipeSchema = new Schema({
     default: 1 
   },
   servings: { 
-    type: Number, 
+    type: String, 
     required: true, 
     default: 1
   },

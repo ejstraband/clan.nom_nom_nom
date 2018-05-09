@@ -131,7 +131,7 @@ class NewRecipe extends Component {
               placeholder="Whose recipe is this?"
               title="Please supply the author of this recipe."
             />
-                  <Input
+            <Input
               value={this.state.servings}
               onChange={this.handleInputChange}
               name="servings"
@@ -162,7 +162,7 @@ class NewRecipe extends Component {
               title="Please supply the ingredients and amounts on this line."
               //this will later be changed to a dropdown or multi-select
             />
-                  <Input
+            <Input
               value={this.state.directions}
               onChange={this.handleInputChange}
               name="directions"
