@@ -15,6 +15,12 @@ module.exports = {
       .then(dbUser => res.json(dbUser))
       .catch(err => res.status(422).json(err));
   },
+  findByName: function(req, res) {
+    db.user
+      .findOne({"name": req.params.name})
+      .then(dbuser => res.json(dbuser))
+      .catch(err => res.status(422).json(err));
+  },
   create: function(req, res) {
     console.log(req.body);
     // hash the password
@@ -41,8 +47,10 @@ module.exports = {
     });
   },
   update: function(req, res) {
+    console.log("req.body in update/userController is ", req.body)
+    console.log("req.params_id in update/userController is ", req.params.id)
     db.user
-      .findOneAndUpdate({ _id: req.params.id }, req.body)
+      .findByIdAndUpdate( req.params._id,{$set: {favorites: req.body}})
       .then(dbuser => res.json(dbuser))
       .catch(err => res.status(422).json(err));
   },

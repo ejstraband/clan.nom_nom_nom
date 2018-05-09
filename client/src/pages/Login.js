@@ -16,48 +16,52 @@ class Login extends Component {
     console.log("Component did mount");
   }
 
-  handleInputChange = event => {
-    const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    });
-  };
-
-  handleFormSubmit = event => {
-    event.preventDefault();
-    if (this.state.email && this.state.password) {
-      console.log("login submitted");
-      this.setState({ message: "" });
-      // API.getUser(this.state.email)
-      console.log(this.state);
-      API.loginUser({
-        email: this.state.email.toLowerCase(),
-        password: this.state.password,
-        message: this.state.message
-      })
-        .then(res => {
-          console.log("Login.js says, response from login is: ");
-          console.log(res);
-          if (res.data.status === 200) {
-            // success - email and password are valid
-            localStorage.setItem("family", res.data.family);
-            this.setState({ message: "Success!" });
-            this.props.history.push("/recipes");
-          } else if (res.data.status === 299) {
-            // user exists but password is wrong
-            this.setState({ message: "Wrong password" });
-          } else {
-            // user not found
-            this.setState({
-              message: "User not found"
-            });
-          }
+	handleFormSubmit = event => {
+		event.preventDefault();
+		if (this.state.email && this.state.password) {
+			console.log("login submitted");
+			this.setState({message: ''})
+			// API.getUser(this.state.email)
+			console.log(this.state);
+			API.loginUser(
+				{
+					email: this.state.email.toLowerCase(),
+					password: this.state.password,
+					message: this.state.message,
+				}
+		)
+			.then(res => {
+				console.log("Login.js says, response from login is: ")
+				console.log(res);
+				if (res.data.status === 200){
+					// success - email and password are valid
+					localStorage.setItem("family", res.data.family);
+					localStorage.setItem("user", res.data.id);
+					localStorage.setItem("favorites", res.data.favorites || []);
+					this.setState({message: 'Success!'});
+					this.props.history.push("/recipes");
+				} else if (res.data.status === 299) {
+					// user exists but password is wrong
+					this.setState({message: "Wrong password"})
+				} else {
+					// user not found
+					this.setState({
+						message: 'User not found',
+					})
+				}
         })
         .catch(err => {
           // we may never hit this now?
           console.log("Login.js says, User get " + err);
         });
     }
+  };
+
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
   };
 
   render() {
