@@ -28,14 +28,19 @@ class Recipes extends React.Component {
     return (
       <div>
         <Navbar />
-        <Hero backgroundImage="http://slatkisvijet.com/images/2016/09/savjeti-i-trikovi-za-pecenje-kolaca.jpeg">
+        <Hero     backgroundImage="http://slatkisvijet.com/images/2016/09/savjeti-i-trikovi-za-pecenje-kolaca.jpeg">
           <h1>Ancestry*dot*Nom</h1>
           <h2>Where families meet to share recipes</h2>
         </Hero>
         <Container style={{ marginTop: 30 }}>
           <Row>
-            <Col size="md-12">
+            <Col className="searchType" size="col-12">
               <h2>Newest Recipes</h2>
+            </Col>
+          </Row>
+          <Row>  
+            {/* <Col size="md-"></Col> */}
+            <Col className="recipeList" size="md-12">
               <RecipeList recipes={this.state.recipes} />
             </Col>
           </Row>
