@@ -11,7 +11,7 @@
     "seed": "node scripts/seedDB.js",
     "herokuSeed": "node scripts/herokuSeeds.js",
     "installDeps": "yarn && cd client && yarn",
-    "prepare": "cd client && yarn"
+    "prepare": "cd client && yarn && yarn run build"
   },
   "author": "Team 4/5 Hatted",
   "license": "MIT",
