@@ -65,11 +65,8 @@ const recipeSchema = new Schema({
     required: false
   },
   notes: {
-    note: {
-      author: { type: String },
-      body: { type: String },
-      date: { type: Date }
-    }
+    type: String,
+    required: false
   },
   image: "",
   date: { 

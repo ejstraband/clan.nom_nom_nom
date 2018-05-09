@@ -21,7 +21,7 @@ class NewRecipe extends Component {
     categories: "",
     ingredients: "",
     instructions: "",
-    notes: []
+    notes: ""
   };
 
   componentDidMount() {
@@ -30,6 +30,7 @@ class NewRecipe extends Component {
 
   handleInputChange = event => {
     const { name, value } = event.target;
+    console.log(name);
     this.setState({
       [name]: value
     });
@@ -74,7 +75,7 @@ class NewRecipe extends Component {
 					categories: "",
 					ingredients: "",
 					instructions: "",
-					notes: [],   
+					notes: "",   
 				})
 			}) // log out the information submitted as a check
 			.catch(err => console.log('NewRecipe.js says, New Recipe safe ' + err));
@@ -259,6 +260,7 @@ class NewRecipe extends Component {
                     <textarea 
                       // value={this.state.short_desc} //not sure why value={this.state.short_desc} is preventing any text.
                       type='text'
+                      name='short_desc'
                       value={this.state.short_desc}
                       onChange={this.handleInputChange}
                       className="form-control noresize" 
@@ -280,6 +282,7 @@ class NewRecipe extends Component {
                     <textarea 
                       value={this.state.story}
                       onChange={this.handleInputChange} //not sure why value={this.state.story} is preventing any text.
+                      name='story'
                       className="form-control noresize" 
                       id="short_story" 
                       rows="9"
@@ -299,6 +302,7 @@ class NewRecipe extends Component {
                   <textarea
                     onChange={this.handleInputChange} //not sure why value={this.state.story} is preventing any text.
                     value={this.state.ingredients}
+                    name='ingredients'
                     className="form-control noresize" 
                     id="short_descTxtA" 
                     rows="9"
@@ -318,6 +322,7 @@ class NewRecipe extends Component {
                     <textarea 
                       value={this.state.instructions}
                       onChange={this.handleInputChange} //not sure why value={this.state.story} is preventing any text.
+                      name='instructions'
                       className="form-control noresize" 
                       id="short_descTxtA" 
                       rows="9"
