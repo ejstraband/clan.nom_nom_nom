@@ -11,16 +11,26 @@ import RecipeList from "../components/RecipeList";
 class Recipes extends React.Component {
   
   state = {
+    family: localStorage.getItem("family"),
     recipes: []
   };
 
   componentDidMount() {
     API.getRecipes().then(data => {
-      console.log("data: ", data)
+      let Recipes = data.data;
+      let filteredRecipes = [];
+      for (let i=0; i<Recipes.length; i++){
+        console.log("inner recipes: ", Recipes[i].family);
+        if (Recipes[i].family === this.state.family) {
+          filteredRecipes.push(Recipes[i])
+        }
+      }
+      console.log("data: ", filteredRecipes);
+
       this.setState({
-        recipes: data.data
+        recipes: filteredRecipes
       })
-      console.log("Recipes.js says, my recipes on page load are: ", this.state.recipes);
+      // console.log("Recipes.js says, my recipes on page load are: ", this.state.recipes);
     })
   }
 

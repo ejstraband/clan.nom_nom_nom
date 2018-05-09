@@ -103,7 +103,7 @@ class RecipeCard extends React.Component {
     const onHeartClick = () => {
       this.setFavorite(!this.state.favorite);
     };
-    console.log("recipe is: ", recipe);
+    // console.log("recipe is: ", recipe);
     return (
       <div className="RecipeCard">
         <Row className="titleRow">
