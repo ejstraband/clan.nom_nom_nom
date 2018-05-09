@@ -60,3 +60,7 @@ ul {
 .danger {
   color: red;
 }
+
+.recipeList, .searchType {
+  margin: auto;
+}
