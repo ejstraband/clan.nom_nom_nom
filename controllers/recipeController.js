@@ -21,6 +21,12 @@ module.exports = {
       .then(dbrecipe => res.json(dbrecipe))
       .catch(err => res.status(422).json(err));
   },
+  findMostRecent: (req, res) => {
+    db.recipe
+      .find().sort('-date').limit(5)
+      .then(dbrecipe => res.json(dbrecipe))
+      .catch(err => res.status(422).json(err));
+  },
   create: function(req, res) {
     console.log('creating Recipe!!!')
     const newRecipe = {

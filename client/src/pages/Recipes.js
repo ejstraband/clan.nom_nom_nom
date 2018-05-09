@@ -29,13 +29,13 @@ class Recipes extends React.Component {
       <div>
         <Navbar />
         <Hero backgroundImage="http://slatkisvijet.com/images/2016/09/savjeti-i-trikovi-za-pecenje-kolaca.jpeg">
-          <h1>Ancestry*dot*Nom</h1>
-          <h2>Where families meet to share recipes</h2>
+          <h2>Ancestry*dot*Nom</h2>
+          <h6>Where families meet to share recipes</h6>
         </Hero>
         <Container style={{ marginTop: 30 }}>
           <Row>
             <Col size="md-12">
-              <h1>Newest Recipes</h1>
+              <h2>Newest Recipes</h2>
               <RecipeList recipes={this.state.recipes} />
 
               {/* <Link to="/newRecipe">New Recipe</Link> */}
