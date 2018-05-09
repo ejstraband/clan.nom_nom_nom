@@ -7,6 +7,7 @@ import axios from 'axios';
 class Ancestor extends Component {
 	state = {
 		users: [],
+		family: localStorage.getItem("family"),
 		email: "",
 		name: "",
 		linkTo: null,
@@ -46,7 +47,7 @@ class Ancestor extends Component {
 
     if (this.state.name) {
 			const user = {
-				family: localStorage.getItem("family"),
+				family: this.state.family,
         email: this.state.name.replace(" ", "").toLowerCase() + "@ancestry.nom",
 				name: this.state.name,
 				password: "",
