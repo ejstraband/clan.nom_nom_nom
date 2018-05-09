@@ -108,7 +108,7 @@ class SignUp extends Component {
     return (
       <div>
         <Navbar />
-        <div className="container col-6" style={{ marginTop: 20 }}>
+        <div className="container col-6 pt-3" style={{ marginTop: 20 }}>
           <h2>Create an account</h2>
           <form>
             <h6>Which family group do you want to join?</h6>

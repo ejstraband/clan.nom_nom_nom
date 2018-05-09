@@ -6,7 +6,7 @@ import "./Navbar.css";
 const Navbar_0 = props => (
   <nav className="NavBar navbar navbar-expand-lg navbar-light bg-light">
     {/* Shawn or can someone add the Logo here when ready? */}
-    <div style={{ width: 150 }}>logo comes here</div>
+    {/* <div style={{ width: 150 }}>logo comes here</div> */}
     <Link className="navbar-brand" to="/">
       Ancestry.nom
     </Link>

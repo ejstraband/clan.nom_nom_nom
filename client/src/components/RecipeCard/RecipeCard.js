@@ -40,29 +40,21 @@ class RecipeCard extends React.Component {
 
   setFavorite(favorite){
     let recipe = this.props.recipe;
-    console.log("recipe is: ", recipe);
-    console.log("state is", this.state)
+    // console.log("recipe is: ", recipe);
+    // console.log("state is", this.state)
     this.setState({
       favorite: !this.state.favorite
     });
     let favs = [];
     favs = this.state.user_favorites;
-    console.log("recipe id is ", recipe._id);
+    // console.log("recipe id is ", recipe._id);
     favs.push(recipe._id);
-    console.log("user is ", this.state.user_id)
-    console.log("favs is ", favs)
+    // console.log("user is ", this.state.user_id)
+    // console.log("favs is ", favs)
     API.updateUser(this.state.user_id, {favorites: favs})
     .then(res => console.log(res))
     .catch(err => console.log("RecipeCard.js says, User update " + err));
 
-    /*  ADD FUNCTIONALITY
-      if (!favorite) 
-        find user by id
-        add recipe id to user favorites array
-      else
-        remove recipe id from user favorites array
-    */
-    
   }
 
   onUpvoteClick = () => {
@@ -82,6 +74,7 @@ class RecipeCard extends React.Component {
     const onHeartClick = () => {
       this.setFavorite(!this.state.favorite);
     };
+    console.log("recipe is: ", recipe);
     return (
       <div className="RecipeCard">
         {this.renderTitle()}
