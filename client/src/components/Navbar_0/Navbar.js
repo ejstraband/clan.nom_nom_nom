@@ -5,6 +5,8 @@ import "./Navbar.css";
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
 const Navbar_0 = props => (
   <nav className="NavBar navbar navbar-expand-lg navbar-light bg-light">
+    {/* Shawn or can someone add the Logo here when ready? */}
+    <div style={{ width: 150 }}>logo comes here</div>
     <Link className="navbar-brand" to="/">
       Ancestry.nom
     </Link>
@@ -91,5 +93,4 @@ const Navbar_0 = props => (
     </ul>
   </nav>
 );
-
 export default Navbar_0;

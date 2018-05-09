@@ -66,44 +66,46 @@ class Recipes extends React.Component {
               item: "sweet butter"
             },
             {
-              quantity: .25,
+              quantity: 0.25,
               measure: "teaspoons",
               item: "white pepper"
             },
             {
-              quantity: .5,
+              quantity: 0.5,
               measure: "cup",
               item: "parmesan cheese, grated"
             },
             {
-              quantity: .75,
+              quantity: 0.75,
               measure: "cup",
               item: "mozzarella cheese, grated"
             }
           ],
-          directions: "1 Melt butter in medium saucepan with olive oil over medium/low heat.  2 Add the garlic, cream, white pepper and bring mixture to a simmer.  3 Stir often.  4 Add the Parmesan cheese and simmer sauce for 8-10 minutes or until sauce has thickened and is smooth.  5 When sauce has thickened add the Mozzarella cheese and stir until smooth. STIR FREQUENTLY.  6 While the sauce cooks, boil noodles for 3-5 minutes.",
-          notes: [{note: "This recipe was given to me by my niece Alissa."}],
-          image: "https://www.bunsinmyoven.com/wp-content/uploads/2018/03/authentic-alfredo-sauce.jpg",
-        },
+          directions:
+            "1 Melt butter in medium saucepan with olive oil over medium/low heat.  2 Add the garlic, cream, white pepper and bring mixture to a simmer.  3 Stir often.  4 Add the Parmesan cheese and simmer sauce for 8-10 minutes or until sauce has thickened and is smooth.  5 When sauce has thickened add the Mozzarella cheese and stir until smooth. STIR FREQUENTLY.  6 While the sauce cooks, boil noodles for 3-5 minutes.",
+          notes: [{ note: "This recipe was given to me by my niece Alissa." }],
+          image:
+            "https://www.bunsinmyoven.com/wp-content/uploads/2018/03/authentic-alfredo-sauce.jpg"
+        }
       ];
 
       this.setState({
         recipes
       });
-    }, 100); //delete above
+    }, 100);
   }
   render() {
     return (
       <div>
         <Navbar />
         <Hero backgroundImage="http://slatkisvijet.com/images/2016/09/savjeti-i-trikovi-za-pecenje-kolaca.jpeg">
-          <h1>Ancestry*dot*Nom</h1>
-          <h2>Where families meet to share recipes</h2>
+          <h2>Ancestry*dot*Nom</h2>
+          <h6>Where families meet to share recipes</h6>
         </Hero>
         <Container style={{ marginTop: 30 }}>
           <Row>
             <Col size="md-12">
-              <h1>Newest Recipes</h1>
+              <h2>Newest Recipes</h2>
               <RecipeList recipes={this.state.recipes} />
 
               {/* <Link to="/newRecipe">New Recipe</Link> */}
