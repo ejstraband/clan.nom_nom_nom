@@ -89,76 +89,6 @@ class NewRecipe extends Component {
             </div>
           </div>
           <form>
-<<<<<<< HEAD
-            <Input
-              value={this.state.title}
-              onChange={this.handleInputChange}
-              name="title"
-              placeholder="Name of recipe"
-              title="What is the title of this recipe?"
-            />
-            <Input
-              value={this.state.prep_time}
-              onChange={this.handleInputChange}
-              name="prep_time"
-              placeholder="Recipe's Prep time"
-              title="Please enter the prep time of this recipe in minutes."
-              //this will later be changed to a dropdown
-            />
-                <Input
-              value={this.state.cook_time}
-              onChange={this.handleInputChange}
-              name="cook_time"
-              placeholder="Cook time"
-              title="Please enter the cook time in minutes."
-              //this will later be changed to a dropdown
-            />
-            <Input
-              value={this.state.difficulty}
-              onChange={this.handleInputChange}
-              name="difficulty"
-              placeholder="Difficulty"
-              title="Please enter the difficulty on a scale of Easy/Moderate/Hard/Very Hard."
-              //this will later be changed to a dropdown
-            />
-            <Input
-              value={this.state.source}
-              onChange={this.handleInputChange}
-              name="source"
-              placeholder="Source of recipe if a cookbook or website"
-              title="Please supply the source of this cookbook and/or website if any."
-            />
-            <Input
-              value={this.state.author}
-              onChange={this.handleInputChange}
-              name="author"
-              placeholder="Whose recipe is this?"
-              title="Please supply the author of this recipe."
-            />
-            <Input
-              value={this.state.servings}
-              onChange={this.handleInputChange}
-              name="servings"
-              placeholder="Servings"
-              title="Please enter the serving size"
-              //this will later be changed to a dropdown
-            />
-            <Input
-              value={this.state.short_desc}
-              onChange={this.handleInputChange}
-              name="short_desc"
-              placeholder="Short description"
-              title="Please supply a short 1-2 paragraph description of this recipe."
-            />
-            <Input
-              value={this.state.categories}
-              onChange={this.handleInputChange}
-              name="categories"
-              placeholder="Choose all that apply"
-              title="Please supply which category this recipe belongs to."
-              //this will later be changed to a dropdown
-            />
-=======
             <div>
               <Input
                 value={this.state.title}
@@ -283,7 +213,6 @@ class NewRecipe extends Component {
               </select>
             </div>
             <br/>
->>>>>>> 9e97e57bd265a9dfa009ae69faf0328b00a91223
             <Input
               value={this.state.ingredients}
               onChange={this.handleInputChange}
