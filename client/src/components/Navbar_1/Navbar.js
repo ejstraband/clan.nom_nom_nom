@@ -42,7 +42,7 @@ const Navbar = props => (
           Recipes
         </Link>
       </li>
-      <li
+      {/* <li
         className={
           window.location.pathname === "/search"
             ? "nav-item active"
@@ -52,10 +52,19 @@ const Navbar = props => (
         <Link to="/search" className="nav-link">
           Search
         </Link>
-      </li>
+      </li> */}
     </ul>
 
     <ul className="navbar-nav ml-auto">
+      <li>Search: 
+        <select  name="search">		
+          <option value=""></option>
+          <option value="recent">Recently added</option>		
+          <option value="favorites">My Favorites</option>		
+          <option value="popular">Popular</option>	
+          <option value="mine">My recipes</option>	
+        </select>
+      </li> 
       <li
         className={
           window.location.pathname === "/ancestor"
@@ -86,7 +95,8 @@ const Navbar = props => (
         <Link to="/signup" className="nav-link">
           Register
         </Link>
-      </li> */}
+      </li> */} 
+
       <li
         className={
           window.location.pathname === "/logout"

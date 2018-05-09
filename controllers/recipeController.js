@@ -31,6 +31,7 @@ module.exports = {
     console.log('creating Recipe!!!')
     const newRecipe = {
       // _id: req.body._id,
+      family: req.body.family,
       title: req.body.title,
       rating: req.body.rating,
       prep_time: req.body.prep_time,
@@ -38,12 +39,15 @@ module.exports = {
       difficulty: req.body.difficulty,
       source: req.body.source,
       author: req.body.author,
+      poster: req.body.poster,
       servings: req.body.servings,
       short_desc: req.body.short_desc,
       catetories: req.body.categories,
       ingredients: req.body.ingredients,
       directions: req.body.directions,
+      story: req.body.story,
       notes: req.body.notes,
+      image: req.body.image,
     };
     console.log('Your recipe object: ' + newRecipe);
     db.recipe

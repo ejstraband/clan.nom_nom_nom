@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import API from "../utils/API";
-import { Input, FormBtn } from "../components/Form";
+import { Input} from "../components/Form";
 import axios from "axios";
 
 class NewFamily extends Component {

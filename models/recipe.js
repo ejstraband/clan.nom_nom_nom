@@ -35,7 +35,7 @@ const recipeSchema = new Schema({
     required: false 
   },
   poster: { 
-    type: Number, 
+    type: String, 
     required: true, 
     default: 1 
   },

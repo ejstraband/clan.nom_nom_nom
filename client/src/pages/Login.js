@@ -68,7 +68,7 @@ class Login extends Component {
     return (
       <div>
         <Navbar />
-        <div className="Login container col-5" style={{ marginTop: 20 }}>
+        <div className="Login container col-5 pt-5" style={{ marginTop: 20 }}>
           <h2>Log in</h2>
           <form>
             <Input

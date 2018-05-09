@@ -79,7 +79,7 @@ class Ancestor extends Component {
 		return (
 			<div>
 				<Navbar />
-				<div className='container col-6'>
+				<div className='container col-6 pt-5'>
 					<h1>Add an Ancestor</h1>
 					<form>
 						<Input

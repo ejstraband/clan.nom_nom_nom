@@ -2,9 +2,11 @@ import React, { Component } from "react";
 import API from "../utils/API";
 import Navbar from "../components/Navbar_1";
 import { Input, FormBtn } from "../components/Form";
+import axios from "axios";
 
 class NewRecipe extends Component {
   state = {
+    users: [],
     recipe: [],
     title: "",
     rating: 0,
@@ -19,11 +21,23 @@ class NewRecipe extends Component {
     categories: [],
     ingredients: [],
     directions: [],
-    notes: []
+    notes: [],
+    image: "",
   };
 
   componentDidMount() {
-    console.log("Component did mount");
+    // get users for author drop down
+    let theseUsers = [];
+    axios.get("/api/users").then(res => {
+      theseUsers = res.data.map(user => {
+        return user;
+      });
+      console.log(theseUsers);
+      this.setState({
+        users: theseUsers
+      });
+      console.log(this.state.users);
+    });
   }
 
   handleInputChange = event => {
@@ -45,14 +59,16 @@ class NewRecipe extends Component {
       cook_time: this.state.cook_time,
       difficulty: this.state.difficulty,
       source: this.state.source,
-      author: this.state.author,
-      poster: this.state.poster || "unknown",
+      author: this.state.author || localStorage.getItem("user"),
+      poster: localStorage.getItem("user"),
       servings: this.state.servings || 0,
       short_desc: this.state.short_desc,
       categories: this.state.categories,
       ingredients: this.state.ingredients,
       directions: this.state.directions,
-      notes: this.state.notes, 
+      story: this.state.story,
+      notes: this.state.notes,
+      image: this.state.image || "", 
 	  };
 	  	API.saveRecipe(newRecipe)
         	.then(res => {
@@ -70,15 +86,25 @@ class NewRecipe extends Component {
 					short_desc: "",
 					categories: [],
 					ingredients: [],
-					directions: [],
-					notes: [],   
+          directions: [],
+          story: "",
+          notes: [],
+          image: "", 
 				})
 			}) // log out the information submitted as a check
-			.catch(err => console.log('NewRecipe.js says, New Recipe safe ' + err));
+			.catch(err => console.log('NewRecipe.js says, New Recipe save ' + err));
     }
   };
 
   render() {
+    
+    let users = this.state.users;
+    let optionUsers = users.map(user => (
+      <option key={user._id} value={user._id}>
+        {user.name}
+      </option>
+    ));
+
     return (
       <div>
         <Navbar />
@@ -152,33 +178,41 @@ class NewRecipe extends Component {
               />
             </div>
             <div>	
-              <Input
+
+              <select
+                className="form-control"
                 value={this.state.author}
                 onChange={this.handleInputChange}
-                className="form-control form-control-sm"
-                type="text"
-                name="author"
-                placeholder="Whose recipe is this?"
-                title="Please supply the author of this recipe."
                 tabindex="6"
-              />
-            </div>
+                name="author"
+              >
+                <option selected="">Whose recipe is this?</option>
+                {optionUsers}
+              </select>              
+            </div><br />
             <div>
-              <Input
+              <select 
+                className='custom-select form-control form-control-sm'
                 value={this.state.servings}
                 onChange={this.handleInputChange}
-                className="form-control form-control-sm"
-                name="servings"
-                type="number" //control method to handle insuring only #'s are entered.
-                min="0"
-                step="1"
-                inputmode="numeric"
-                placeholder="Servings"
-                title="Please enter the serving size"
-                tabindex='7'
-                //this will later be changed to a dropdown
-              />
-            </div>
+                tabIndex='7'
+                name='servings'>
+                  <option selected="">Number of servings</option>
+                  <option value='1'>1</option>
+                  <option value='2'>2</option>
+                  <option value='3'>3</option>
+                  <option value='4'>4</option>
+                  <option value='5'>5</option>
+                  <option value='6'>6</option>
+                  <option value='7'>7</option>
+                  <option value='8'>8</option>
+                  <option value='9'>9</option>
+                  <option value='10'>10</option>
+                  <option value='11'>11</option>
+                  <option value='12'>12</option>
+                  <option value='many'>Many</option>
+              </select>
+            </div><br />
             <div>
               <Input
                 value={this.state.short_desc}
@@ -233,6 +267,15 @@ class NewRecipe extends Component {
               tabindex='11'
             />
             <Input
+              value={this.state.story}
+              onChange={this.handleInputChange}
+              className="form-control form-control-sm"
+              name="story"
+              placeholder="Say something about this recipe"
+              title="Please supply any additional comments on this recipe."
+              tabindex='12'
+            />
+            {/* <Input
               value={this.state.notes}
               onChange={this.handleInputChange}
               className="form-control form-control-sm"
@@ -240,9 +283,18 @@ class NewRecipe extends Component {
               placeholder="Say something about this recipe"
               title="Please supply any additional comments on this recipe."
               tabindex='12'
+            /> */}
+            <Input
+              value={this.state.image}
+              onChange={this.handleInputChange}
+              className="form-control form-control-sm"
+              name="image"
+              placeholder="URL of image for this recipe"
+              title="Image"
+              tabindex='13'
             />
             <FormBtn
-              tabindex='13'
+              tabindex='14'
               disabled={!(this.state.title && this.state.categories && this.state.ingredients && this.state.directions && this.state.notes)}
               onClick={this.handleFormSubmit}
             >
